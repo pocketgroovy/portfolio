@@ -1,0 +1,38 @@
+  .App-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(50px + 2vmin);
+    width: 100%;
+    background-color: white;
+    position: sticky; /*fixed the header*/
+    z-index: 999; /*bring to the top layer*/
+    top: 0; /*bring it to the top of the page*/
+  }
+
+  .contents{
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+  
+  .welcome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(5px + 3vmin);
+    color: black;
+  }
+
+  #video{
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+  }
+  
