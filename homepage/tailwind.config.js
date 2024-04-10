@@ -12,8 +12,12 @@ const config = {
 		},
 		extend: {
 			fontFamily: {
-				name: ['"Pacifico"', ...defaultConfig.theme.fontFamily.sans]
+				name: ['"Pacifico"', ...defaultConfig.theme.fontFamily.sans],
+				other: ['"Reem Kufi Fun"', ...defaultConfig.theme.fontFamily.serif],
+				aboutme: ['"Luckiest Guy"', ...defaultConfig.theme.fontFamily.serif],
 			}
+
+			
 		  }
 	},
 	experimental: { optimizeUniversalDefaults: true },

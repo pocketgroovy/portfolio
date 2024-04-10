@@ -1,4 +1,4 @@
-  .App-header {
+  #toppage-header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,6 +10,14 @@
     z-index: 999; /*bring to the top layer*/
     top: 0; /*bring it to the top of the page*/
   }
+  #toppage-header span{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(5px + 3vmin);
+    color: black;
+  }
 
   .contents{
     margin-top: auto;
@@ -20,15 +28,6 @@
 
   }
   
-  .welcome{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(5px + 3vmin);
-    color: black;
-  }
-
   #video{
     position: fixed;
     z-index: -1;
