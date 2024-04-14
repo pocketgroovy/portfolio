@@ -12,9 +12,13 @@ const config = {
 		},
 		extend: {
 			fontFamily: {
-				name: ['"Pacifico"', ...defaultConfig.theme.fontFamily.sans],
-				other: ['"Reem Kufi Fun"', ...defaultConfig.theme.fontFamily.serif],
-				aboutme: ['"Luckiest Guy"', ...defaultConfig.theme.fontFamily.serif],
+				pacifico: ['"Pacifico"', ...defaultConfig.theme.fontFamily.sans],
+				luckiest: ['"Luckiest Guy"', ...defaultConfig.theme.fontFamily.serif],
+				micro5charted: ['"Micro 5 Charted"', ...defaultConfig.theme.fontFamily.mono],
+				bebas: ['"Bebas Neue"', ...defaultConfig.theme.fontFamily.sans],
+				braah: ['"Braah One"', ...defaultConfig.theme.fontFamily.mono],
+				jerseycharted: ['"Jersey 10 Charted"', ...defaultConfig.theme.fontFamily.mono],
+								
 			}
 
 			

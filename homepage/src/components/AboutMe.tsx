@@ -32,12 +32,11 @@ export default function AboutMe(): ReactElement {
       role='button'
       onClick={onClick}
       onKeyDown={onKeyDown}> 
-      <div className='flex justify-left items-center' >
-        <p className='ml-56 text-4xl font-aboutme md: ml-5'>About Me</p>
+      <div className='m-5 flex items-center' >
+        <p className='font-luckiest ml-5 flex text-6xl md: ml-5'>About Me</p>
         <div className='relative'>
           <img
-          className='m-5 rounded-full' 
-            data-testid='FruitCardImage'
+          className='mr-10 rounded-full' 
             loading={
               !isTabletAndUp 
                 ? 'lazy'
