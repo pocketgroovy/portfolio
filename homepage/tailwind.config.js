@@ -18,6 +18,7 @@ const config = {
 				bebas: ['"Bebas Neue"', ...defaultConfig.theme.fontFamily.sans],
 				braah: ['"Braah One"', ...defaultConfig.theme.fontFamily.mono],
 				jerseycharted: ['"Jersey 10 Charted"', ...defaultConfig.theme.fontFamily.mono],
+				ubuntu:  ['"Ubuntu"', ...defaultConfig.theme.fontFamily.sans],
 								
 			}
 

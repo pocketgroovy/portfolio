@@ -11,12 +11,12 @@
     top: 0; /*bring it to the top of the page*/
   }
   
-  #toppage-header span{
+  /* #toppage-header span{
     display: flex;
     flex-direction: column;
     font-size: calc(5px + 3vmin);
     color: black;
-  }
+  } */
 
   /* #toppage-header p{
     display: flex;

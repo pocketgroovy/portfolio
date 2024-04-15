@@ -1,6 +1,7 @@
 import type { KeyboardEvent, ReactElement } from 'react'
 import { useMediaQuery } from 'utils'
 import myselfimage from '../media/images/me.png'
+import Typewriter from './Typewriter'
 
 const PREFERRED_IMAGE_WIDTH = 100
 const MOBILE_PADDING = 16
@@ -12,7 +13,6 @@ export default function AboutMe(): ReactElement {
 
   function onClick(): void {
     window.scrollTo(0, 0)
-    // navigate()
   }
 
   function onKeyDown(event: KeyboardEvent): void {
@@ -29,14 +29,14 @@ export default function AboutMe(): ReactElement {
 
   return (
     <div
+      className='text-left bg-clip-text bg-green-500'
       role='button'
       onClick={onClick}
       onKeyDown={onKeyDown}> 
       <div className='m-5 flex items-center' >
-        <p className='font-luckiest ml-5 flex text-6xl md: ml-5'>About Me</p>
-        <div className='relative'>
+        <p className='font-luckiest text-fuchsia-700 m-2 flex text-5xl'>About Me</p>
           <img
-          className='mr-10 rounded-full' 
+          className='rounded-full' 
             loading={
               !isTabletAndUp 
                 ? 'lazy'
@@ -57,8 +57,8 @@ export default function AboutMe(): ReactElement {
             }&h=${imageHeight * window.devicePixelRatio}`}
             alt='about me'
           />
-        </div>
       </div>
+      <Typewriter typingText='*Please click me to read about me!' textStyle='font-bebas text-base text-center break-normal ' typingSpeed={1}/>
     </div>
   );
 }
