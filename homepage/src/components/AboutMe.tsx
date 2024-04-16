@@ -2,6 +2,7 @@ import type { KeyboardEvent, ReactElement } from 'react'
 import { useMediaQuery } from 'utils'
 import myselfimage from '../media/images/me.png'
 import Typewriter from './Typewriter'
+import {Link, useNavigate } from 'react-router-dom'
 
 const PREFERRED_IMAGE_WIDTH = 100
 const MOBILE_PADDING = 16
@@ -11,8 +12,11 @@ const ASPECT_RATIO_HEIGHT = 9
 export default function AboutMe(): ReactElement {
   const isTabletAndUp = useMediaQuery('(min-width: 600px)')
 
-  function onClick(): void {
+  const navigate = useNavigate()
+
+  function onClick():void {
     window.scrollTo(0, 0)
+    navigate('aboutMe')
   }
 
   function onKeyDown(event: KeyboardEvent): void {
@@ -34,7 +38,7 @@ export default function AboutMe(): ReactElement {
       onClick={onClick}
       onKeyDown={onKeyDown}> 
       <div className='m-5 flex items-center' >
-        <p className='font-luckiest text-fuchsia-700 m-2 flex text-5xl'>About Me</p>
+        <p className='font-luckiest text-3xl m-3 bg-gradient-to-l from-emerald-300 to-white to-80%  hover:text-emerald-700'>About Me</p>
           <img
           className='rounded-full' 
             loading={

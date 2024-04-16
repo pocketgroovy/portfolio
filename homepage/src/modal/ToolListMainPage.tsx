@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 
-export default function MainTech(): ReactElement{
+export default function ToolListMainPage(): ReactElement{
     return (
         <ul className="list-outside list-disc text-lg">
             <li>React <span className="text-sm" >:UI library</span></li>

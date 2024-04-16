@@ -1,5 +1,5 @@
 import Modal from "pages/Modal";
-import { FC, useState, ReactElement} from "react";
+import { FC, useState, ReactElement } from "react";
 import { useMediaQuery } from 'utils'
 import infoButton from '../media/images/open.png'
 
@@ -10,9 +10,8 @@ const ASPECT_RATIO_WIDTH = 16
 const ASPECT_RATIO_HEIGHT = 9
 
 interface TechProps {
-    children: ReactElement|ReactElement[];
+    children: ReactElement | ReactElement[];
 }
-
 
 export default function ModalButton(props: TechProps): ReturnType<FC> {
     const isTabletAndUp = useMediaQuery('(min-width: 600px)')
@@ -30,34 +29,34 @@ export default function ModalButton(props: TechProps): ReturnType<FC> {
     }
 
     return (
-            <div>
+        <div className="ml-10">
             <Modal open={showModal} onClose={toggleModal}>
                 {props.children}
             </Modal>
-                <div
-                    role='button'
-                    onClick={toggleModal}>
-                    <div className='mt-5 items-center' >
-                            <img
-                                loading={
-                                    !isTabletAndUp
-                                        ? 'lazy'
-                                        : 'eager'
-                                }
-                                decoding={
-                                    !isTabletAndUp
-                                        ? 'async'
-                                        : 'sync'
-                                }
-                                width={imageWidth}
-                                height={imageHeight}
-                                src={`${infoButton}?&w=${imageWidth * window.devicePixelRatio
-                                    }&h=${imageHeight * window.devicePixelRatio}`}
-                                alt='info button'
-                            />
-                        </div>
-                    </div>
-                    <span className='font-bebas text-base text-left break-normal'>*technical info about this page</span>
+            <div
+                role='button'
+                onClick={toggleModal}>
+                <div >
+                    <img
+                        loading={
+                            !isTabletAndUp
+                                ? 'lazy'
+                                : 'eager'
+                        }
+                        decoding={
+                            !isTabletAndUp
+                                ? 'async'
+                                : 'sync'
+                        }
+                        width={imageWidth}
+                        height={imageHeight}
+                        src={`${infoButton}?&w=${imageWidth * window.devicePixelRatio
+                            }&h=${imageHeight * window.devicePixelRatio}`}
+                        alt='info button'
+                    />
                 </div>
+            </div>
+            <span className='font-bebas text-base text-left break-normal'>*technical info about this page</span>
+        </div>
     );
 }

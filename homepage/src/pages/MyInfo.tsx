@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import getFruits from 'api/getFruits'
 // import Head from 'components/Head'
-import ImageAttribution from 'components/ImageAttribution'
+// import ImageAttribution from 'components/ImageAttribution'
 import LoadingOrError from 'components/LoadingOrError'
 import type { ReactElement } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
@@ -10,9 +10,8 @@ import { useMediaQuery } from 'utils'
 const DESKTOP_IMAGE_WIDTH_PERCENTAGE = 0.4
 const MOBILE_IMAGE_HEIGHT_PERCENTAGE = 0.3
 
-export default function DetailsPage(): ReactElement {
+export default function MyInfo(): ReactElement {
 	const isTabletAndUp = useMediaQuery('(min-width: 600px)')
-	const { fruitName } = useParams()
 
 	const { isPending, isError, error, data } = useQuery({
 		queryKey: ['fruits'],
@@ -22,9 +21,8 @@ export default function DetailsPage(): ReactElement {
 		return <LoadingOrError error={error as Error} />
 	}
 
-	const fruit = data.find(
-		f => f.name.toLowerCase() === fruitName?.toLowerCase()
-	)
+	const fruit = true
+
 	if (!fruit) {
 		return <Navigate to='/' replace />
 	}
@@ -49,12 +47,12 @@ export default function DetailsPage(): ReactElement {
 						width={imageWidth}
 						height={imageHeight}
 						style={{
-							backgroundColor: fruit.image.color
+							backgroundColor: 'white'
 						}}
-						src={`${fruit.image.url}&w=${imageWidth}&h=${imageHeight}`}
-						alt={fruit.name}
+						// src={`${fruit.image.url}&w=${imageWidth}&h=${imageHeight}`}
+						// alt={fruit.name}
 					/>
-					<ImageAttribution author={fruit.image.author} />
+					{/* <ImageAttribution author={fruit.image.author} /> */}
 				</div>
 				<div className='my-8 sm:my-0 sm:ml-16'>
 					<Link data-testid='BackLink' to='/' className='flex items-center'>
@@ -66,7 +64,7 @@ export default function DetailsPage(): ReactElement {
 						data-testid='FruitName'
 						className='mt-2 text-6xl font-bold sm:mt-8'
 					>
-						{fruit.name}
+						'apple'
 					</h1>
 					<h2 className='mt-3 text-xl text-gray-500 dark:text-gray-400'>
 						Vitamins per 100 g (3.5 oz)
@@ -78,14 +76,14 @@ export default function DetailsPage(): ReactElement {
 								<th className='px-4 py-2'>Quantity</th>
 							</tr>
 						</thead>
-						<tbody>
+						{/* <tbody>
 							{fruit.metadata.map(({ name, value }) => (
 								<tr key={`FruitVitamin-${name}`} className='font-medium'>
 									<td className='border border-gray-300 px-4 py-2'>{name}</td>
 									<td className='border border-gray-300 px-4 py-2'>{value}</td>
 								</tr>
 							))}
-						</tbody>
+						</tbody> */}
 					</table>
 				</div>
 			</div>
