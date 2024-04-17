@@ -2,6 +2,9 @@ import Modal from "pages/Modal";
 import { FC, useState, ReactElement } from "react";
 import { useMediaQuery } from 'utils'
 import infoButton from '../media/images/open.png'
+import ImageAttribution from "./ImageAttribution";
+import Attribution from "./Attribution";
+import { IAttribute } from "interface/iattribute";
 
 
 const PREFERRED_IMAGE_WIDTH = 100
@@ -11,6 +14,16 @@ const ASPECT_RATIO_HEIGHT = 9
 
 interface TechProps {
     children: ReactElement | ReactElement[];
+}
+
+const freepikBamboo:IAttribute = {
+	site: {
+		name: 'freepik',
+		url: 'https://www.freepik.com/'
+	},
+	author: {
+		name: 'ilovehz'
+	}
 }
 
 export default function ModalButton(props: TechProps): ReturnType<FC> {
@@ -29,7 +42,7 @@ export default function ModalButton(props: TechProps): ReturnType<FC> {
     }
 
     return (
-        <div className="ml-10">
+        <div className="ml-10 ">
             <Modal open={showModal} onClose={toggleModal}>
                 {props.children}
             </Modal>
@@ -56,7 +69,8 @@ export default function ModalButton(props: TechProps): ReturnType<FC> {
                     />
                 </div>
             </div>
-            <span className='font-bebas text-base text-left break-normal'>*technical info about this page</span>
+            <span className='font-bebas text-base text-white text-left break-normal drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>*technical info about this page</span>
+            <Attribution attribute={freepikBamboo} />
         </div>
     );
 }
