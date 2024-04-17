@@ -6,8 +6,8 @@ export default function AboutMeTab(): ReactElement {
     return (
         <Tabs className='m-5'>
             <TabList>
-                <Tab>My Careers</Tab>
-                <Tab>My Interests</Tab>
+                <Tab>Careers</Tab>
+                <Tab>Services</Tab>
             </TabList>
 
             <TabPanel>

@@ -31,7 +31,6 @@ export default function MyInfo(): ReactElement {
 		<div>
 			<div className='m-3 gap-4 grid grid-cols-4 min-h-full items-center sm:flex-row'>
 				<div className='relative'>
-					{/* console.log({window.innerHeight}); */}
 					<img
 						width={imageWidth}
 						height={imageHeight}
@@ -41,6 +40,7 @@ export default function MyInfo(): ReactElement {
 						src={`${mekateimage}?&w=${imageWidth}&h=${imageHeight}`}
 						alt='mekate'
 					/>
+					<p className='text-sm'> with my daughter, trip to the Izu penninsula, Japan</p>
 				</div>
 				<div className='col-span-3'>
 					<div>

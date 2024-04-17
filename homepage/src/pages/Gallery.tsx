@@ -18,7 +18,7 @@ export default function GalleryPage(): ReactElement {
 	}
 
 	return (
-		<>
+		<div>
 			<video autoPlay loop muted >
 				<source src={backgroundVideo} type='video/mp4' />
 			</video>
@@ -28,6 +28,6 @@ export default function GalleryPage(): ReactElement {
 					<Fruit key={`FruitCard-${fruit.name}`} fruit={fruit} index={index} />
 				))}
 			</div>
-		</>
+		</div>
 	)
 }

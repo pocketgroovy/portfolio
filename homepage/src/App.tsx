@@ -8,10 +8,21 @@ import Typewriter from 'components/Typewriter'
 import ModalButton from 'components/ModalButton'
 import ToolListMainPage from 'modal/ToolListMainPage'
 
+
 const Gallery = lazy(async () => import('pages/Gallery'))
 const Details = lazy(async () => import('pages/Details'))
 const MyInfo = lazy(async () => import('pages/MyInfo'))
 
+const PREFERRED_IMAGE_WIDTH = 100
+const MOBILE_PADDING = 16
+const ASPECT_RATIO_WIDTH = 16
+const ASPECT_RATIO_HEIGHT = 9
+
+const imageWidth = Math.min(
+	PREFERRED_IMAGE_WIDTH,
+	window.innerWidth - MOBILE_PADDING
+)
+const imageHeight = imageWidth / (ASPECT_RATIO_WIDTH / ASPECT_RATIO_HEIGHT)
 
 export default function App(): ReactElement {
 	return (
@@ -21,10 +32,10 @@ export default function App(): ReactElement {
 					<div className='col-span-3 bg-clip-boarder bg-gradient-to-r from-pink-400 to-violet-500'>
 						<h1 className='font-pacifico p-2 text-center bg-clip-text text-transparent bg-gradient-to-l from-green-300 to-red-300'><span className='text-black font-mono text-lg text-left' > welcome to</span> Yoshi Miyamoto <span className='text-black font-mono text-lg text-left' > homepage</span> </h1>
 					</div>
-					<div className='grid grid-flow-col grid-cols-4' >
-						<div><AboutMe />						
+					<div className='grid grid-flow-col grid-cols-4 bg-bamboo-pattern' >
+						<div><AboutMe />
 						</div>
-						<Typewriter typingText='Thank you for stopping by to check out my portfolios!!' textStyle='font-jerseycharted flex text-5xl leading-normal text-center break-normal col-span-2' typingSpeed={100} />
+						<Typewriter typingText='Thank you for stopping by to check out my portfolios!!' textStyle='font-jerseycharted flex text-7xl text-indigo-900 leading-normal text-center break-normal col-span-2' typingSpeed={100} />
 						<ModalButton><ToolListMainPage /></ModalButton>
 					</div>
 				</header>
@@ -39,6 +50,6 @@ export default function App(): ReactElement {
 				</div>
 			</Router>
 
-		</div>
+		</div >
 	);
 }

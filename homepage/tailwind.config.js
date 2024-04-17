@@ -20,9 +20,11 @@ const config = {
 				jerseycharted: ['"Jersey 10 Charted"', ...defaultConfig.theme.fontFamily.mono],
 				ubuntu:  ['"Ubuntu"', ...defaultConfig.theme.fontFamily.sans],
 								
+			},
+			backgroundImage:{
+				'bamboo-pattern': "url('./media/images/bamboo-raft.jpg')"
 			}
 
-			
 		  }
 	},
 	experimental: { optimizeUniversalDefaults: true },
