@@ -1,31 +1,21 @@
-import { useQuery } from '@tanstack/react-query'
-import getFruits from 'api/getFruits'
+// import { useQuery } from '@tanstack/react-query'
+// import getFruits from 'api/getFruits'
 // import Head from 'components/Head'
 // import ImageAttribution from 'components/ImageAttribution'
-import LoadingOrError from 'components/LoadingOrError'
+// import LoadingOrError from 'components/LoadingOrError'
 import type { ReactElement } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { useMediaQuery } from 'utils'
+import mekateimage from '../media/images/izu.png'
+import AboutMeTab from 'components/AboutMeTab'
+import WhoAmI from 'components/WhoAmI'
+
 
 const DESKTOP_IMAGE_WIDTH_PERCENTAGE = 0.4
 const MOBILE_IMAGE_HEIGHT_PERCENTAGE = 0.3
 
 export default function MyInfo(): ReactElement {
 	const isTabletAndUp = useMediaQuery('(min-width: 600px)')
-
-	const { isPending, isError, error, data } = useQuery({
-		queryKey: ['fruits'],
-		queryFn: getFruits
-	})
-	if (isPending || isError) {
-		return <LoadingOrError error={error as Error} />
-	}
-
-	const fruit = true
-
-	if (!fruit) {
-		return <Navigate to='/' replace />
-	}
 
 	const imageWidth =
 		(isTabletAndUp
@@ -38,55 +28,32 @@ export default function MyInfo(): ReactElement {
 		window.devicePixelRatio
 
 	return (
-		<>
-			{/* <Head title={fruit.name} /> */}
-			<div className='flex min-h-screen flex-col items-center sm:flex-row'>
+		<div>
+			<div className='m-3 gap-4 grid grid-cols-4 min-h-full items-center sm:flex-row'>
 				<div className='relative'>
+					{/* console.log({window.innerHeight}); */}
 					<img
-						data-testid='FruitImage'
 						width={imageWidth}
 						height={imageHeight}
 						style={{
 							backgroundColor: 'white'
 						}}
-						// src={`${fruit.image.url}&w=${imageWidth}&h=${imageHeight}`}
-						// alt={fruit.name}
+						src={`${mekateimage}?&w=${imageWidth}&h=${imageHeight}`}
+						alt='mekate'
 					/>
-					{/* <ImageAttribution author={fruit.image.author} /> */}
 				</div>
-				<div className='my-8 sm:my-0 sm:ml-16'>
-					<Link data-testid='BackLink' to='/' className='flex items-center'>
-						<img src='/icons/arrow-left.svg' alt='' className='h-5 w-5' />
-						<span className='ml-4 text-xl'>Back</span>
-					</Link>
-
-					<h1
-						data-testid='FruitName'
-						className='mt-2 text-6xl font-bold sm:mt-8'
-					>
-						'apple'
-					</h1>
-					<h2 className='mt-3 text-xl text-gray-500 dark:text-gray-400'>
-						Vitamins per 100 g (3.5 oz)
-					</h2>
-					<table className='mt-8 text-lg'>
-						<thead>
-							<tr>
-								<th className='px-4 py-2'>Vitamin</th>
-								<th className='px-4 py-2'>Quantity</th>
-							</tr>
-						</thead>
-						{/* <tbody>
-							{fruit.metadata.map(({ name, value }) => (
-								<tr key={`FruitVitamin-${name}`} className='font-medium'>
-									<td className='border border-gray-300 px-4 py-2'>{name}</td>
-									<td className='border border-gray-300 px-4 py-2'>{value}</td>
-								</tr>
-							))}
-						</tbody> */}
-					</table>
+				<div className='col-span-3'>
+					<div>
+						<Link data-testid='BackLink' to='/' className='flex items-center'>
+							<img src='/icons/arrow-left.svg' alt='' className='h-5 w-5' />
+							<span className='ml-4 text-xl'>Back To Top Page</span>
+						</Link>
+						<WhoAmI />
+					</div>
 				</div>
 			</div>
-		</>
+
+			<AboutMeTab />
+		</div>
 	)
 }

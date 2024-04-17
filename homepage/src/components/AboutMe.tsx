@@ -2,7 +2,7 @@ import type { KeyboardEvent, ReactElement } from 'react'
 import { useMediaQuery } from 'utils'
 import myselfimage from '../media/images/me.png'
 import Typewriter from './Typewriter'
-import {Link, useNavigate } from 'react-router-dom'
+import {useNavigate } from 'react-router-dom'
 
 const PREFERRED_IMAGE_WIDTH = 100
 const MOBILE_PADDING = 16
