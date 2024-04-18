@@ -12,7 +12,7 @@ export default function Modal(props: ModalProps): ReturnType<FC> {
         <div className={`${"modal"} ${props.open ? "display-block" : "display-none"}`}>
             <div className="modal-main">
                 <div className="modal-head">
-                    <p className="text-lg font-bebas text-left break-normal">Tools Used in this page</p>
+                    <p className="text-lg font-bebas text-left break-normal">Tools Used To Make This page</p>
                 </div>
                 <div>
                     {props.children}

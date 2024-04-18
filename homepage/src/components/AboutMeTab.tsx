@@ -6,16 +6,18 @@ export default function AboutMeTab(): ReactElement {
     return (
         <Tabs className='m-5'>
             <TabList>
+                <Tab>Projects</Tab>
                 <Tab>Careers</Tab>
                 <Tab>Services</Tab>
+                <Tab>Contact</Tab>
             </TabList>
 
-            <TabPanel>
+            {/* <TabPanel>
                 <h2>work work work</h2>
             </TabPanel>
             <TabPanel>
                 <h2>play play play</h2>
-            </TabPanel>
+            </TabPanel> */}
         </Tabs>
     );
 }

@@ -5,5 +5,5 @@ const defaultSpeed = 30;
 
 export default function Typewriter({typingText = '', typingSpeed = defaultSpeed, textStyle = ''}): ReactElement{
     const displayText = useTypewriter(typingText, typingSpeed);
-    return (<p className={textStyle}>{displayText}</p>);
+    return ( <p className={textStyle}>{displayText}</p>);
 }

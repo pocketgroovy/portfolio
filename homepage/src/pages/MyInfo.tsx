@@ -52,8 +52,6 @@ export default function MyInfo(): ReactElement {
 					</div>
 				</div>
 			</div>
-
-			<AboutMeTab />
 		</div>
 	)
 }
