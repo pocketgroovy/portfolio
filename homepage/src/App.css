@@ -1,8 +1,8 @@
   #toppage-header {
     display: flex;
     flex-direction: column;
-    align-items: left;
-    justify-content: center;
+    /* align-items: left; */
+    /* justify-content: bottom; */
     font-size: calc(10px + 2vmin);
     width: 100%;
     background-color: white;
@@ -10,14 +10,14 @@
     z-index: 999; /*bring to the top layer*/
     top: 0; /*bring it to the top of the page*/
   }
-  
+/* 
   #toppage-header bamboowall{
     z-index: -1;
     width:10%;
     height: 1%;
     top: 0;    
   }
-  
+   */
   .contents video{
     position: fixed;
     z-index: -1;

@@ -3,43 +3,34 @@ import type { ReactElement } from 'react'
 import { lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import './App.css'
-import AboutMe from 'components/AboutMe'
-import Typewriter from 'components/Typewriter'
-import ModalButton from 'components/ModalButton'
-import ToolListMainPage from 'modal/ToolListMainPage'
+import Header from './components/Header';
+
+// import AboutMe from 'components/AboutMe'
+// import Typewriter from 'components/Typewriter'
+// import ModalButton from 'components/ModalButton'
+// import ToolListMainPage from 'modal/ToolListMainPage'
 
 
 const Gallery = lazy(async () => import('pages/Gallery'))
 const Details = lazy(async () => import('pages/Details'))
 const MyInfo = lazy(async () => import('pages/MyInfo'))
 
-const PREFERRED_IMAGE_WIDTH = 100
-const MOBILE_PADDING = 16
-const ASPECT_RATIO_WIDTH = 16
-const ASPECT_RATIO_HEIGHT = 9
+// const PREFERRED_IMAGE_WIDTH = 100
+// const MOBILE_PADDING = 16
+// const ASPECT_RATIO_WIDTH = 16
+// const ASPECT_RATIO_HEIGHT = 9
 
-const imageWidth = Math.min(
-	PREFERRED_IMAGE_WIDTH,
-	window.innerWidth - MOBILE_PADDING
-)
-const imageHeight = imageWidth / (ASPECT_RATIO_WIDTH / ASPECT_RATIO_HEIGHT)
+// const imageWidth = Math.min(
+// 	PREFERRED_IMAGE_WIDTH,
+// 	window.innerWidth - MOBILE_PADDING
+// )
+// const imageHeight = imageWidth / (ASPECT_RATIO_WIDTH / ASPECT_RATIO_HEIGHT)
 
 export default function App(): ReactElement {
 	return (
 		<div className="App">
 			<Router>
-				<header id='toppage-header'>
-					<div className='col-span-3 bg-clip-boarder bg-gradient-to-r from-pink-400 to-violet-500'>
-						<h1 className='font-pacifico p-2 text-center bg-clip-text text-transparent bg-gradient-to-l from-green-300 to-red-300'><span className='text-black font-mono text-lg text-left' > welcome to</span> Yoshi Miyamoto <span className='text-black font-mono text-lg text-left' > homepage</span> </h1>
-					</div>
-					<div className='grid grid-flow-col grid-cols-4 bg-bamboo-pattern' >
-					<div className='absolute top-0 h-full w-full bg-gradient-to-b from-transparent via-transparent to-current text-black text-opacity-30' />
-						<div><AboutMe />
-						</div>
-						<Typewriter typingText='Thank you for stopping by to check out my portfolios!!' textStyle='font-jerseycharted flex text-7xl text-indigo-900 leading-normal text-center break-normal col-span-2' typingSpeed={100} />
-						<ModalButton><ToolListMainPage /></ModalButton>
-					</div>
-				</header>
+				<Header />
 				<div className='contents'>
 					<Suspense fallback={<LoadingOrError />}>
 						<Routes>

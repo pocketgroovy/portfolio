@@ -34,7 +34,7 @@ export default function AboutMe(): ReactElement {
   return (
 
     <div
-      className='text-left bg-clip-text bg-green-500 '
+      className='fixed text-left bg-clip-text bg-green-500'
       role='button'
       onClick={onClick}
       onKeyDown={onKeyDown}>
