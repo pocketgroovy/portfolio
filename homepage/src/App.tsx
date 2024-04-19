@@ -20,6 +20,7 @@ export default function App(): ReactElement {
 						<Route path='/' element={<Gallery />} />
 						<Route path=':fruitName' element={<Details />} />
 						<Route path='/aboutMe' element={<MyInfo />} />
+						<Route path='/career' element={<MyInfo />} />
 					</Routes>
 				</Suspense>
 			</Router>

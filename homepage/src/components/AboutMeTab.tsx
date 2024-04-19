@@ -1,23 +1,38 @@
 import { ReactElement } from 'react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
 
 export default function AboutMeTab(): ReactElement {
     return (
-        <Tabs className='m-5'>
-            <TabList>
-                <Tab>Projects</Tab>
-                <Tab>Careers</Tab>
-                <Tab>Services</Tab>
-                <Tab>Contact</Tab>
-            </TabList>
-
-            {/* <TabPanel>
-                <h2>work work work</h2>
-            </TabPanel>
-            <TabPanel>
-                <h2>play play play</h2>
-            </TabPanel> */}
-        </Tabs>
+        <div className='absolute font-comfortaa '>
+            <ul className="text-sm font-medium text-center ">
+                <li className="mb-2"> 
+                    <a href="/" aria-current="page" className="block p-4 text-blue-600 bg-gray-100 rounded-lg cursor-pointer select-none
+    active:translate-y-2  active:[box-shadow:0_0px_0_0_#BAB6D0,0_0px_0_0_#D4D8DF]
+    active:border-b-[0px]
+    transition-all duration-150 [box-shadow:0_3px_0_0_#BAB6D0,0_5px_0_0_#D4D8DF]
+    border-b-[1px] border-gray-400">Projects</a>
+                </li>
+                <li className="mb-2">
+                    <a href="/career" className="block p-4 text-blue-600 bg-gray-100 rounded-lg cursor-pointer select-none
+    active:translate-y-2  active:[box-shadow:0_0px_0_0_#BAB6D0,0_0px_0_0_#D4D8DF]
+    active:border-b-[0px]
+    transition-all duration-150 [box-shadow:0_3px_0_0_#BAB6D0,0_5px_0_0_#D4D8DF]
+    border-b-[1px] border-gray-400">Career</a>
+                </li> 
+                <li className="mb-2">
+                    <a href="/services" className="block p-4 text-blue-600 bg-gray-100 rounded-lg cursor-pointer select-none
+    active:translate-y-2  active:[box-shadow:0_0px_0_0_#BAB6D0,0_0px_0_0_#D4D8DF]
+    active:border-b-[0px]
+    transition-all duration-150 [box-shadow:0_3px_0_0_#BAB6D0,0_5px_0_0_#D4D8DF]
+    border-b-[1px] border-gray-400">Services</a>
+                </li>
+                <li className="mb-2">
+                    <a href="/contacts" className="block p-4 text-blue-600 bg-gray-100 rounded-lg cursor-pointer select-none
+    active:translate-y-2  active:[box-shadow:0_0px_0_0_#BAB6D0,0_0px_0_0_#D4D8DF]
+    active:border-b-[0px]
+    transition-all duration-150 [box-shadow:0_3px_0_0_#BAB6D0,0_5px_0_0_#D4D8DF]
+    border-b-[1px] border-gray-700">Contacts</a>
+                </li>
+            </ul>
+        </div>
     );
 }
