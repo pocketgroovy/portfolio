@@ -19,7 +19,7 @@ export default function GalleryPage(): ReactElement {
 
 	return (
 		<div>
-			<p className='font-bebas m-3 text-3xl text-center '>↓↓ Click the following cards to see my sample projects! </p>
+			<p className='font-jersey25 m-3 text-5xl text-center'>my sample projects </p>
 			<video autoPlay loop muted id="bgVideo">
 				<source src={backgroundVideo} type='video/mp4' />
 			</video>

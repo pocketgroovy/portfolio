@@ -18,7 +18,9 @@ const config = {
 				bebas: ['"Bebas Neue"', ...defaultConfig.theme.fontFamily.sans],
 				braah: ['"Braah One"', ...defaultConfig.theme.fontFamily.mono],
 				jerseycharted: ['"Jersey 10 Charted"', ...defaultConfig.theme.fontFamily.mono],
-				ubuntu:  ['"Ubuntu"', ...defaultConfig.theme.fontFamily.sans],				
+				ubuntu:  ['"Ubuntu"', ...defaultConfig.theme.fontFamily.sans],		
+				comfortaa: 	 ['"Comfortaa"', ...defaultConfig.theme.fontFamily.serif],		
+				jersey25: 	 ['"Jersey 25"', ...defaultConfig.theme.fontFamily.serif],		
 			},
 			backgroundImage:{
 				'bamboo-pattern': "url('./media/images/bamboo-raft.jpg')"

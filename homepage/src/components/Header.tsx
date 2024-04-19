@@ -15,9 +15,9 @@ export default function Header(): ReactElement {
             <div className='grid grid-flow-col grid-cols-4 bg-bamboo-pattern min-h-48' >
                 <div><AboutMe />
                 </div>
-                <div className='text-center text-black font-mono text-lg col-span-2'>
-                    <p> welcome!! </p> <h1 className='m-5 py-6 font-pacifico text-6xl bg-clip-text text-transparent bg-gradient-to-l from-green-400 to-red-200  drop-shadow'>I am Yoshi Miyamoto </h1>
-                    <p>Software / Backend / Infra Engineer</p>
+                <div className='text-center col-span-2'>
+                    <p className='font-jersey25  text-5xl'> welcome!! </p> <h1 className='m-5 py-6 font-pacifico text-6xl bg-clip-text text-transparent bg-gradient-to-l from-green-300 to-red-100  drop-shadow'>I am Yoshi Miyamoto </h1>
+                    <p className='font-comfortaa text-3xl bg-lime-300 rounded-full p-px bg-gradient-to-b from-gray-100 to-transparent"'>Application Developer / Backend Engineer/ Infra Architect</p>
                 </div>
                 <ModalButton><ToolListMainPage /></ModalButton>
 
