@@ -4,7 +4,7 @@ export default function WhoAmI(): ReactElement {
 
     return (<div>
         <h1
-            className='font-luckiest mt-8 text-6xl sm:mt-8'>
+            className='font-luckiest mt-8 text-5xl sm:mt-8'>
             WHO AM I?
         </h1>
 

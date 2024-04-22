@@ -1,7 +1,6 @@
 import type { KeyboardEvent, ReactElement } from 'react'
 import { useMediaQuery } from 'utils'
 import myselfimage from '../media/images/me.png'
-import Typewriter from './Typewriter'
 import { useNavigate } from 'react-router-dom'
 import AboutMeTab from './AboutMeTab'
 
@@ -63,8 +62,6 @@ export default function AboutMe(): ReactElement {
             alt='about me'
           />
         </div>
-        <AboutMeTab />
-        {/* <Typewriter typingText='*Please click me to read about me!' textStyle='font-bebas text-base text-white text-center break-normal drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]' typingSpeed={1} /> */}
       </div>
     </div>
   );

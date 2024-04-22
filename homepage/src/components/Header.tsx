@@ -18,10 +18,13 @@ export default function Header(): ReactElement {
                 <div>
                     <AboutMe />
                 </div>
+                <div className='absolute mt-[8rem]'>
+                    <AboutMeTab />
+                </div>
                 <div className='text-center col-span-3'>
                     <p className='font-jersey25  text-5xl'> welcome!! </p>
                     <h1 className='m-3 py-6 font-pacifico text-6xl bg-clip-text text-transparent bg-gradient-to-l from-green-300 to-red-100  drop-shadow'>I am Yoshi Miyamoto </h1>
-                    <p className='font-comfortaa bg-lime-300 rounded-full p-px bg-gradient-to-b from-gray-100 to-transparent md:text-3xl sm: text-base '>Application Developer / Backend Engineer/ Infra Architect</p>
+                    <p className='font-comfortaa bg-lime-300 rounded-full p-px bg-gradient-to-b from-gray-100 to-transparent md:text-3xl sm: text-base '>Application Developer / Backend / Infra Engineer</p>
                 </div>
                 <ModalButton><ToolListMainPage /></ModalButton>
 

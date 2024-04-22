@@ -1,13 +1,7 @@
-// import { useQuery } from '@tanstack/react-query'
-// import getFruits from 'api/getFruits'
-// import Head from 'components/Head'
-// import ImageAttribution from 'components/ImageAttribution'
-// import LoadingOrError from 'components/LoadingOrError'
 import type { ReactElement } from 'react'
-import { Link, Navigate, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useMediaQuery } from 'utils'
 import mekateimage from '../media/images/izu.png'
-import AboutMeTab from 'components/AboutMeTab'
 import WhoAmI from 'components/WhoAmI'
 
 
