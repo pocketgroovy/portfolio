@@ -26,7 +26,7 @@ export default function Experience(): ReactElement {
 	return (
 		<div>
 			<div className=' m-3 gap-4 grid grid-cols-4 min-h-full'>
-				<div>
+				<div className='mt-72 row-span-2'>
 					<img
 						width={imageWidth}
 						height={imageHeight}

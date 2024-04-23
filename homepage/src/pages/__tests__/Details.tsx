@@ -1,5 +1,5 @@
 import { screen, waitFor } from '@testing-library/react'
-import Gallery from 'pages/Gallery'
+import Gallery from 'pages/Projects'
 import type ReactRouterDOM from 'react-router-dom'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import renderWithProviders, {

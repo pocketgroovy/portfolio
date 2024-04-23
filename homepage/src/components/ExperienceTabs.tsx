@@ -4,6 +4,7 @@ import 'react-tabs/style/react-tabs.css';
 import Career from './Career';
 import Education from './Education';
 import Certificates from './Certificates';
+import Technologies from './Technologies';
 
 
 export default function ExperienceTabs(): ReactElement {
@@ -13,6 +14,7 @@ export default function ExperienceTabs(): ReactElement {
                 <Tab>Experience</Tab>
                 <Tab>Education</Tab>
                 <Tab>Certificates</Tab>
+                <Tab>Tech Stack</Tab>
             </TabList>
 
             <TabPanel>
@@ -23,6 +25,9 @@ export default function ExperienceTabs(): ReactElement {
             </TabPanel>
             <TabPanel>
                 <h2><Certificates/></h2>
+            </TabPanel>
+            <TabPanel>
+                <h2><Technologies/></h2>
             </TabPanel>
         </Tabs>
     );
