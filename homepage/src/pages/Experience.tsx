@@ -4,10 +4,11 @@ import { useMediaQuery } from 'utils'
 import mekateimage from '../media/images/izu.png'
 import Career from 'components/Career'
 import Education from 'components/Education'
+import ExperienceTabs from 'components/ExperienceTabs'
 
 
-const DESKTOP_IMAGE_WIDTH_PERCENTAGE = 0.4
-const MOBILE_IMAGE_HEIGHT_PERCENTAGE = 0.3
+const DESKTOP_IMAGE_WIDTH_PERCENTAGE = 0.3
+const MOBILE_IMAGE_HEIGHT_PERCENTAGE = 0.4
 
 export default function Experience(): ReactElement {
 	const isTabletAndUp = useMediaQuery('(min-width: 600px)')
@@ -24,8 +25,8 @@ export default function Experience(): ReactElement {
 
 	return (
 		<div>
-			<div className='m-3 gap-4 grid grid-cols-4 min-h-full items-center sm:flex-row'>
-				<div className='relative'>
+			<div className=' m-3 gap-4 grid grid-cols-4 min-h-full'>
+				<div>
 					<img
 						width={imageWidth}
 						height={imageHeight}
@@ -38,14 +39,7 @@ export default function Experience(): ReactElement {
 					<p className='text-sm'> with my daughter, trip to the Izu penninsula, Japan</p>
 				</div>
 				<div className='col-span-3'>
-					<div>
-						<Link to='/' className='flex items-center'>
-							<img src='/icons/arrow-left.svg' alt='' className='h-5 w-5' />
-							<span className='ml-4 text-xl'>Back To Top Page</span>
-						</Link>
-						<Career />
-                        <Education />
-					</div>
+                        <ExperienceTabs />
 				</div>
 			</div>
 		</div>

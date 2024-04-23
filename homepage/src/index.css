@@ -2,3 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer components {
+    .jobtitle {
+        @apply text-lg font-bold;
+    }  
+    .tasklist {
+        @apply list-disc list-inside;
+    }  
+
+    .experience-title{
+        @apply font-luckiest mt-8 text-5xl sm:mt-8;
+    }
+
+    .experience-task-style{
+        @apply space-y-2 font-normal break-words tracking-wider;
+    }
+}
