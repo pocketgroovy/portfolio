@@ -4,7 +4,7 @@ import { ChangeEvent, FormEvent, ReactElement, useState } from 'react';
 export default function ContactForm():ReactElement {
 	const [emailForm, setEmailForm] = useState({
 		subject: '',
-		name: '',
+		username: '',
 		email: '',
 		message: '',
 	});
@@ -17,7 +17,7 @@ export default function ContactForm():ReactElement {
 
 
 	function resetEmailForm() {
-		setEmailForm({ subject: '', name: '', email: '', message: '' });
+		setEmailForm({ subject: '', username: '', email: '', message: '' });
 	}
 
 	const handleEmailFormChange = (event: ChangeEvent<HTMLInputElement> ) => {
@@ -60,7 +60,7 @@ export default function ContactForm():ReactElement {
 
 		const details = { 
 			subject: target.subject.value,
-			name: target.name.value,
+			username: target.username.value,
 			email: target.email.value,
 			message: target.message.value
 		 };
@@ -121,11 +121,11 @@ export default function ContactForm():ReactElement {
 					<br></br>
 					<div className='field'>
 					<label  className="text-sm">Name*
-						<input name='name' className="contact-input"
+						<input name='username' className="contact-input"
 							type="name"
 							placeholder="your name"
 							required={true}
-							value={emailForm.name}
+							value={emailForm.username}
 							onChange={handleEmailFormChange}
 						/>
 					</label>
