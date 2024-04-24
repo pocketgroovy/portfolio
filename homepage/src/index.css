@@ -19,6 +19,20 @@
     .experience-task-style {
         @apply space-y-2 font-normal break-words tracking-wider;
     }
+
+    .tab-button {
+        @apply block p-4 text-blue-600 bg-gray-100 rounded-lg cursor-pointer select-none
+        active:translate-y-2  active:[box-shadow:0_0px_0_0_#BAB6D0,0_0px_0_0_#D4D8DF]
+        active:border-b-[0px]
+        transition-all duration-150 [box-shadow:0_3px_0_0_#BAB6D0,0_5px_0_0_#D4D8DF]
+        border-b-[1px] border-gray-400;
+    }
+
+    .contact-input {
+        @apply bg-gray-50 border border-gray-300 
+        text-gray-600 text-sm rounded-lg w-full p-2.5
+        focus:border-blue-500
+    }
 }
 
 

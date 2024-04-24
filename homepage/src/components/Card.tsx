@@ -1,4 +1,3 @@
-// Card.js
 
 export default function Card() {
 	return (
@@ -11,7 +10,7 @@ export default function Card() {
 								experience-task-style text-xl 
 								font-semibold text-blue-gray-900 
 								antialiased">
-						Reach Me At
+						Feel free to reach me at
 					</h5>
 					<ul>
 						<li className="m-5 text-xl ">
@@ -22,7 +21,7 @@ export default function Card() {
 								experience-task-style text-xl 
 								font-semibold text-blue-gray-900 
 								">
-						or please use the contact form below
+						or use the contact form below
 					</p>
 					</ul>
 				</div>

@@ -6,7 +6,7 @@ import Career from 'components/Career'
 import Education from 'components/Education'
 import ExperienceTabs from 'components/ExperienceTabs'
 import Card from 'components/Card'
-import Feedback from 'components/Feedback'
+import ContactForm from 'components/ContactForm'
 
 
 const DESKTOP_IMAGE_WIDTH_PERCENTAGE = 0.3
@@ -44,9 +44,9 @@ export default function Contacts(): ReactElement {
                     <Card />
                 </div>
                 <div className='col-span-2'>
-                <Feedback />
+                    <ContactForm />
                 </div>
-                
+
 
             </div>
         </div>
