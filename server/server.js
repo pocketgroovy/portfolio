@@ -1,11 +1,17 @@
 import express from "express";
 import cors from "cors";
-import records from "./routes/record.js";
-import winston from "winston";
-import fs from 'fs';
-import https from 'https';
+import 'dotenv/config.js';
 
-const PORT = process.env.PORT || 3660;
+// import fs from 'fs';
+
+// import records from "./routes/record.js";
+import emails from "./routes/emailrouter.js";
+import winston from "winston";
+// import https from 'https';
+// import nodemailer from "nodemailer";
+
+// const PORT = process.env.PORT || 3660;
+const MAILSERVERPORT = process.env.MAILSERVERPORT || 5000;
 const app = express();
 
 // app.get('/', (req, res) => {
@@ -15,17 +21,19 @@ const app = express();
 //     return res.send('hi you are authorized users');
 // });
 
-app.use(cors({
-  origin: "https://pocketgroovy.com",
-  methods: "GET,POST,PUT,DELETE, PATCH",
-  preflightContinue: false,
-  optionsSuccessStatus: 204,
-  maxAge: 3600,
-  allowedHeaders: ['Content-Type'],
-  credentials: true
-}));
+// app.use(cors({
+//   origin: "https://pocketgroovy.com",
+//   methods: "GET,POST,PUT,DELETE, PATCH",
+//   preflightContinue: false,
+//   optionsSuccessStatus: 204,
+//   maxAge: 3600,
+//   allowedHeaders: ['Content-Type'],
+//   credentials: true
+// }));
+app.use(cors());
 app.use(express.json());
-app.use("/record", records);
+// app.use("/record", records);
+app.use("/", emails);
 
 const logger = winston.createLogger({
   level: "info",
@@ -67,22 +75,22 @@ app.use((err, req, res, next) => {
   res.status(500).send();
 });
 
-https
-  .createServer(
-    {
-      // ...
-      cert: fs.readFileSync('/etc/ssl/mongodb-test-server1.crt'),
-      key: fs.readFileSync('/etc/ssl/mongodb-test-server1.key'),
-      // requestCert: true,
-      // rejectUnauthorized: false,
-      // ca: fs.readFileSync('/etc/ssl/mongodb-test-ca.crt')
-      // ...
-    },
-    app
-  )
-  .listen(PORT);
+// https
+//   .createServer(
+//     {
+//       // ...
+//       cert: fs.readFileSync('/etc/ssl/mongodb-test-server1.crt'),
+//       key: fs.readFileSync('/etc/ssl/mongodb-test-server1.key'),
+//       // requestCert: true,
+//       // rejectUnauthorized: false,
+//       // ca: fs.readFileSync('/etc/ssl/mongodb-test-ca.crt')
+//       // ...
+//     },
+//     app
+//   )
+//   .listen(PORT);
 
 // start the Express server
-// app.listen(PORT, () => {
-//   logger.log("info", `Server listening on port ${PORT}`);
-// });
+app.listen(MAILSERVERPORT, () => {
+  logger.log("info", `Server listening on port ${MAILSERVERPORT}`);
+});
