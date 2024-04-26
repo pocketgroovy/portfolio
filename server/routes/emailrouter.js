@@ -14,8 +14,8 @@ router.post('/send', (req, res, next) => {
     var message = req.body.message;
     var subject = req.body.subject;
     var senderEmail = `${name} <${process.env.EMAIL}>`;
-    var yourEmail = `${process.env.YOURNAME} <${process.env.EMAIL}>`;
-    var content = `name: ${name} \n email: ${email} \n message: ${message} `;
+    var myEmail = `${process.env.MYNAME} <${process.env.EMAIL}>`;
+    var content = `name: ${name} \nemail: ${email} \nmessage: ${message} `;
 
     const options = {
         from: senderEmail,
@@ -25,7 +25,7 @@ router.post('/send', (req, res, next) => {
     };
 
     const replyoptions = {
-        from: yourEmail,
+        from: myEmail,
         to: email,
         subject: 'Message received',
         text: `Hi ${name},\nThank you for sending me a message. I will get back to you soon.\n\nBest Regards,\n${process.env.MYNAME}\n${process.env.MYSITE}\n\n\nMessage Details\nName: ${name}\n Email: ${email}\n Message: ${message}`,
