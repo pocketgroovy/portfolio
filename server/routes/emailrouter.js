@@ -1,6 +1,7 @@
 import express from "express";
 import transporter from "../mailtransporter.js";
 import 'dotenv/config.js';
+import logger from "../logger.js";
 
 const router = express.Router();
 
@@ -27,14 +28,14 @@ router.post('/send', (req, res, next) => {
     const replyoptions = {
         from: myEmail,
         to: email,
-        subject: 'Message received',
+        subject: 'Automated reply: message received',
         text: `Hi ${name},\nThank you for sending me a message. I will get back to you soon.\n\nBest Regards,\n${process.env.MYNAME}\n${process.env.MYSITE}\n\n\nMessage Details\nName: ${name}\n Email: ${email}\n Message: ${message}`,
         html: `<p>Hi ${name},<br>Thank you for sending me a message. I will get back to you soon.<br><br>Best Regards,<br>${process.env.MYNAME}<br>${process.env.MYSITE}<br><br><br>Message Details<br>Name: ${name}<br> Email: ${email}<br> Message: ${message}</p>`,
     }
     //Deliver message from your portfolio to your email address
     transporter.sendMail(options, (err, data) => {
-        console.log(err);
-        console.log(data);
+        logger.error(err);
+        logger.info(data);
         if (err) {
             res.json({
                 status: 'fail',
@@ -46,9 +47,9 @@ router.post('/send', (req, res, next) => {
             //If Success, send Auto Reply email
             transporter.sendMail(replyoptions, (error, info) => {
                 if (error) {
-                    console.log(error);
+                    logger.error(error);
                 } else {
-                    console.log('Message sent: ' + info.response);
+                    logger.info('Message sent: ' + info.response);
                 }
             });
         }

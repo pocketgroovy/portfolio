@@ -1,5 +1,6 @@
 import nodemailer from "nodemailer";
 import 'dotenv/config.js';
+import logger from "./logger.js";
 
 
 const transport = {
@@ -17,10 +18,10 @@ const transporter = nodemailer.createTransport(transport);
 
 transporter.verify((error, success) => {
 	if (error) {
-		console.log(error);
-        console.log('not ready to take message');
+		logger.error(error);
+        logger.error('not ready to take message');
 	} else {
-		console.log('Server is ready to take messages');
+		logger.info('Server is ready to take messages');
 	}
 });
 
