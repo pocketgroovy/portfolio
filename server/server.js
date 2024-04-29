@@ -8,8 +8,8 @@ const MAILSERVERPORT = process.env.MAILSERVERPORT || 5000;
 const app = express();
 
 app.use(cors({
-  origin: "https://pocketgroovy.com",
-  methods: "GET,POST",
+  origin: "http://localhost:5173",
+  methods: "GET,POST, OPTIONS",
   preflightContinue: false,
   optionsSuccessStatus: 204,
   maxAge: 3600,
