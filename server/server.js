@@ -1,5 +1,5 @@
 import express from "express";
-import cors from "cors";
+// import cors from "cors";
 import 'dotenv/config.js';
 import emails from "./routes/emailrouter.js";
 import logger from "./logger.js";

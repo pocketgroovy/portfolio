@@ -24,7 +24,7 @@ export default function MyInfo(): ReactElement {
 	return (
 		<div>
 			<div className='m-3 gap-4 grid grid-cols-4 min-h-full items-center sm:flex-row'>
-				<div className='relative'>
+				<div className='mt-72'>
 					<img
 						width={imageWidth}
 						height={imageHeight}

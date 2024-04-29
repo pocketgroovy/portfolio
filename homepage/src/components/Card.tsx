@@ -15,8 +15,8 @@ export default function Card() {
 							<span>info@pocketgroovy.com</span>
 						</li>
 						<p className="text-left">
-						or use the contact form below
-					</p>
+							or use the contact form below
+						</p>
 					</ul>
 				</div>
 			</div>

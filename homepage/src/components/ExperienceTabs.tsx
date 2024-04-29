@@ -18,16 +18,16 @@ export default function ExperienceTabs(): ReactElement {
             </TabList>
 
             <TabPanel>
-                <h2><Career/></h2>
+                <h2><Career /></h2>
             </TabPanel>
             <TabPanel>
-                <h2><Education/></h2>
+                <h2><Education /></h2>
             </TabPanel>
             <TabPanel>
-                <h2><Certificates/></h2>
+                <h2><Certificates /></h2>
             </TabPanel>
             <TabPanel>
-                <h2><Technologies/></h2>
+                <h2><Technologies /></h2>
             </TabPanel>
         </Tabs>
     );

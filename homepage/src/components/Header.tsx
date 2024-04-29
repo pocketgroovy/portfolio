@@ -3,7 +3,7 @@ import AboutMe from './AboutMe';
 import Typewriter from './Typewriter';
 import ModalButton from './ModalButton';
 import ToolListMainPage from 'modal/ToolListMainPage';
-import AboutMeTab from './AboutMeTab';
+import NavTab from './NavTab';
 
 
 export default function Header(): ReactElement {
@@ -19,7 +19,7 @@ export default function Header(): ReactElement {
                     <AboutMe />
                 </div>
                 <div className='absolute mt-[8rem]'>
-                    <AboutMeTab />
+                    <NavTab />
                 </div>
                 <div className='text-center col-span-3'>
                     <p className='font-jersey25  text-5xl'> welcome!! </p>
