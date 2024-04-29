@@ -7,14 +7,14 @@ import logger from "./logger.js";
 const MAILSERVERPORT = process.env.MAILSERVERPORT || 5000;
 const app = express();
 
-app.use(cors({
-  origin: "http://localhost:5173",
-  methods: "GET, POST, OPTIONS, HEAD",
-  preflightContinue: false,
-  optionsSuccessStatus: 204,
-  maxAge: 3600,
-  allowedHeaders: ['DNT','User-Agent', 'X-Requested-With', 'If-Modified-Since', 'Cache-Control', 'Content-Type', 'Keep-Alive'],
-}));
+// app.use(cors({
+//   origin: "http://localhost:5173",
+//   methods: "GET, POST, OPTIONS, HEAD",
+//   preflightContinue: false,
+//   optionsSuccessStatus: 204,
+//   maxAge: 3600,
+//   allowedHeaders: ['DNT','User-Agent', 'X-Requested-With', 'If-Modified-Since', 'Cache-Control', 'Content-Type', 'Keep-Alive'],
+// }));
 app.use(express.json());
 app.use("/", emails);
 
