@@ -7,7 +7,14 @@ import logger from "./logger.js";
 const MAILSERVERPORT = process.env.MAILSERVERPORT || 5000;
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://pocketgroovy.com",
+  methods: "GET,POST",
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
+  maxAge: 3600,
+  allowedHeaders: ['Content-Type'],
+}));
 app.use(express.json());
 app.use("/", emails);
 
