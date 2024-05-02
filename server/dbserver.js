@@ -1,48 +1,17 @@
 import express from "express";
-import cors from "cors";
 import crud from "./routes/crud.js";
-import winston from "winston";
 import fs from 'fs';
 import https from 'https';
 import 'dotenv/config.js';
+import logger from "./dblogger.js";
 
 
 const DB_PORT = process.env.DB_PORT || 3660;
 const db = express();
 
-// app.get('/', (req, res) => {
-//   if (!req.client.authorized) {
-//     return res.status(401).send('Invalid client certificate authentication.');
-//   }
-//     return res.send('hi you are authorized users');
-// });
-
-// db.use(cors({
-//   origin: "https://pocketgroovy.com",
-//   methods: "GET,POST,PUT,DELETE, PATCH",
-//   preflightContinue: false,
-//   optionsSuccessStatus: 204,
-//   maxAge: 3600,
-//   allowedHeaders: ['Content-Type'],
-//   credentials: true
-// }));
 db.use(express.json());
 db.use("/projects", crud);
 
-const logger = winston.createLogger({
-  level: "info",
-  // Use timestamp and printf to create a standard log format
-  format: winston.format.combine(
-    winston.format.timestamp(),
-    winston.format.printf(
-      (info) => `${info.timestamp} ${info.level}: ${info.message}`
-    )
-  ),
-  transports: [
-    new winston.transports.Console(),
-    new winston.transports.File({ filename: "logs/dbserver.log" }),
-  ],
-});
 
 db.use((req, res, next) => {
   // Log an info message for each incoming request
@@ -79,8 +48,3 @@ https
   .listen(DB_PORT, () => {
     logger.info(`Server listening on port ${DB_PORT}`)
 });
-
-// start the Express server
-// db.listen(DB_PORT, () => {
-//     logger.info(`Server listening on port ${DB_PORT}`);
-// });
