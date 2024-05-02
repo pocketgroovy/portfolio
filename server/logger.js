@@ -2,8 +2,8 @@ import winston from "winston";
 const { combine, timestamp, json, errors } = winston.format;
 const { createLogger, transports} = winston;
 
-const logger = createLogger(logelevel='info', logpath)({
-  level: logelevel,
+const logger = createLogger({
+  level: process.env.LOG_LEVEL || "info",
   // Use timestamp and printf to create a standard log format
   format: combine(
     errors({ stack: true }),
@@ -14,7 +14,7 @@ const logger = createLogger(logelevel='info', logpath)({
   ),
   transports: [
     new transports.Console(),
-    new transports.File({ filename: logpath }),
+    new transports.File({ filename: "logs/email.log" }),
   ],
 });
 
