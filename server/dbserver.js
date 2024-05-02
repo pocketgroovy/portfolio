@@ -79,6 +79,6 @@ db.use((err, req, res, next) => {
 //   .listen(DB_PORT);
 
 // start the Express server
-app.listen(DB_PORT, () => {
+db.listen(DB_PORT, () => {
     logger.info(`Server listening on port ${DB_PORT}`);
 });
