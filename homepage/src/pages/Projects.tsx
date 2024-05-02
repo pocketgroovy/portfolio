@@ -5,9 +5,7 @@ import LoadingOrError from 'components/LoadingOrError'
 import type { ReactElement } from 'react'
 import backgroundVideo from '../media/video/samplevideo.mp4'
 
-
-
-export default function GalleryPage(): ReactElement {
+export default function Projects(): ReactElement {
 
 	const { isPending, isError, error, data } = useQuery({
 		queryKey: ['fruits'],
