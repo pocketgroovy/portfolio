@@ -13,7 +13,7 @@ const client = new MongoClient(uri,{
 });
 
 try {
-  logger.info(uri);
+  logger.info('try connecting DB');
   // Connect the client to the server
   await client.connect();
   // Send a ping to confirm a successful connection
