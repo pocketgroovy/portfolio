@@ -1,5 +1,5 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
-import logger from "./dblogger.js";
+import logger from "../dblogger.js";
 import 'dotenv/config.js';
 
 const uri = process.env.DB_URI || "";
