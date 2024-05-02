@@ -17,7 +17,7 @@ try {
   // Connect the client to the server
   await client.connect();
   // Send a ping to confirm a successful connection
-  await client.db("admin").command({ ping: 1 });
+  await client.db("portfolio").command({ ping: 1 });
   logger.info(
    "Pinged your deployment. You successfully connected to MongoDB!"
   );
@@ -25,6 +25,6 @@ try {
   logger.error(err);
 }
 
-let db = client.db("projects");
+let db = client.db("portfolio");
 
 export default db;
