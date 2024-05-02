@@ -17,15 +17,15 @@ const db = express();
 //     return res.send('hi you are authorized users');
 // });
 
-db.use(cors({
-  origin: "https://pocketgroovy.com",
-  methods: "GET,POST,PUT,DELETE, PATCH",
-  preflightContinue: false,
-  optionsSuccessStatus: 204,
-  maxAge: 3600,
-  allowedHeaders: ['Content-Type'],
-  credentials: true
-}));
+// db.use(cors({
+//   origin: "https://pocketgroovy.com",
+//   methods: "GET,POST,PUT,DELETE, PATCH",
+//   preflightContinue: false,
+//   optionsSuccessStatus: 204,
+//   maxAge: 3600,
+//   allowedHeaders: ['Content-Type'],
+//   credentials: true
+// }));
 db.use(express.json());
 db.use("/projects", crud);
 
@@ -63,17 +63,22 @@ db.use((err, req, res, next) => {
 });
 
 // express server https
-https
-  .createServer(
-    {
-      // ...
-      cert: fs.readFileSync('/etc/ssl/mongodb-test-server1.crt'),
-      key: fs.readFileSync('/etc/ssl/mongodb-test-server1.key'),
-      // requestCert: true,
-      // rejectUnauthorized: false,
-      // ca: fs.readFileSync('/etc/ssl/mongodb-test-ca.crt')
-      // ...
-    },
-    db
-  )
-  .listen(DB_PORT);
+// https
+//   .createServer(
+//     {
+//       // ...
+//       cert: fs.readFileSync('/etc/ssl/mongodb-test-server1.crt'),
+//       key: fs.readFileSync('/etc/ssl/mongodb-test-server1.key'),
+//       // requestCert: true,
+//       // rejectUnauthorized: false,
+//       // ca: fs.readFileSync('/etc/ssl/mongodb-test-ca.crt')
+//       // ...
+//     },
+//     db
+//   )
+//   .listen(DB_PORT);
+
+// start the Express server
+app.listen(DB_PORT, () => {
+    logger.info(`Server listening on port ${DB_PORT}`);
+});
