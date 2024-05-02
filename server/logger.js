@@ -1,8 +1,8 @@
 import winston from "winston";
-const { combine, timestamp, json, errors } = winston.format;
+const { combine, timestamp, json, errors, createLogger, transports} = winston.format;
 
 
-const logger = winston.createLogger({
+const logger = createLogger({
   level: process.env.LOG_LEVEL || "info",
   // Use timestamp and printf to create a standard log format
   format: combine(
@@ -13,8 +13,8 @@ const logger = winston.createLogger({
     )
   ),
   transports: [
-    new winston.transports.Console(),
-    new winston.transports.File({ filename: "logs/email.log" }),
+    new transports.Console(),
+    new transports.File({ filename: "logs/email.log" }),
   ],
 });
 
