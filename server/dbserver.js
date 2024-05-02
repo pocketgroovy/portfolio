@@ -63,22 +63,24 @@ db.use((err, req, res, next) => {
 });
 
 // express server https
-// https
-//   .createServer(
-//     {
-//       // ...
-//       cert: fs.readFileSync('/etc/ssl/mongodb-test-server1.crt'),
-//       key: fs.readFileSync('/etc/ssl/mongodb-test-server1.key'),
-//       // requestCert: true,
-//       // rejectUnauthorized: false,
-//       // ca: fs.readFileSync('/etc/ssl/mongodb-test-ca.crt')
-//       // ...
-//     },
-//     db
-//   )
-//   .listen(DB_PORT);
+https
+  .createServer(
+    {
+      // ...
+      cert: fs.readFileSync('/etc/ssl/mongodb-test-server1.crt'),
+      key: fs.readFileSync('/etc/ssl/mongodb-test-server1.key'),
+      // requestCert: true,
+      // rejectUnauthorized: false,
+      // ca: fs.readFileSync('/etc/ssl/mongodb-test-ca.crt')
+      // ...
+    },
+    db
+  )
+  .listen(DB_PORT, () => {
+    logger.info(`Server listening on port ${DB_PORT}`)
+});
 
 // start the Express server
-db.listen(DB_PORT, () => {
-    logger.info(`Server listening on port ${DB_PORT}`);
-});
+// db.listen(DB_PORT, () => {
+//     logger.info(`Server listening on port ${DB_PORT}`);
+// });
