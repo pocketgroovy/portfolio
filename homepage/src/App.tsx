@@ -3,14 +3,13 @@ import type { ReactElement } from 'react'
 import { lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import './App.css'
-import Header from './components/Header';
-import Experience from 'pages/Experience'
-import Contacts from 'pages/Contacts'
-
+import Header from './components/Header'
 
 const Projects = lazy(async () => import('pages/Projects'))
 const Details = lazy(async () => import('pages/Details'))
 const InfoAboutMe = lazy(async () => import('pages/InfoAboutMe'))
+const Experience = lazy(async () => import('pages/Experience'));
+const Contacts = lazy(async () => import('pages/Contacts'));
 
 export default function App(): ReactElement {
 	return (
