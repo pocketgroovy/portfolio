@@ -52,7 +52,7 @@ db.use((req, res, next) => {
 // Handle HTTP GET requests to the root path
 db.get("/", (req, res) => {
   // Send a response to the client
-  res.send("Hello, DB user!");
+  res.status(403).send("Forbidden PG");
 });
 
 // Handle errors using the logger
