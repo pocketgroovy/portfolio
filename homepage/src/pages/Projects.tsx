@@ -19,7 +19,7 @@ export default function Projects(): ReactElement {
 
 
 		<div>
-			<div className='absolute botoom-0 h-full w-full bg-black bg-opacity-50'>
+			<div className='py-5 botoom-0 h-full w-full bg-black bg-opacity-50'>
 
 				<p className='font-ubuntu text-4xl text-center text-slate-300'>my sample projects </p>
 
