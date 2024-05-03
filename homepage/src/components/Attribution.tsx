@@ -1,4 +1,4 @@
-import { IAttribute } from 'interface/iattribute'
+import { IAttribute } from 'types/iattribute'
 import type { MouseEvent, ReactElement } from 'react'
 
 interface Properties {
@@ -12,7 +12,6 @@ function onClick(event: MouseEvent): void {
 export default function ImageAttribution({ attribute }: Properties): ReactElement {
 	return (
 		<>
-			{/* <div className='absolute top-0 h-full w-full bg-gradient-to-b from-transparent via-transparent to-current text-black text-opacity-30' /> */}
 			<div className='absolute bottom-1 right-1 px-1 text-xs text-white'>
 				<span>Image by </span>
 				<a

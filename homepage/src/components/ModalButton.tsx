@@ -1,9 +1,8 @@
 import Modal from "pages/Modal";
-import { FC, useState, ReactElement } from "react";
+import { FC, useState } from "react";
 import { useMediaQuery } from 'utils'
 import infoButton from '../media/images/open.png'
-import Attribution from "./Attribution";
-import { IAttribute } from "interface/iattribute";
+import { ITechProps } from "types/itechProps";
 
 
 const PREFERRED_IMAGE_WIDTH = 100
@@ -11,21 +10,8 @@ const MOBILE_PADDING = 16
 const ASPECT_RATIO_WIDTH = 16
 const ASPECT_RATIO_HEIGHT = 9
 
-interface TechProps {
-    children: ReactElement | ReactElement[];
-}
 
-const freepikBamboo: IAttribute = {
-    site: {
-        name: 'freepik',
-        url: 'https://www.freepik.com/'
-    },
-    author: {
-        name: 'ilovehz'
-    }
-}
-
-export default function ModalButton(props: TechProps): ReturnType<FC> {
+export default function ModalButton(props: ITechProps): ReturnType<FC> {
     const isTabletAndUp = useMediaQuery('(min-width: 600px)')
 
     const imageWidth = Math.min(
@@ -69,7 +55,6 @@ export default function ModalButton(props: TechProps): ReturnType<FC> {
                 </div>
                 <p className='font-bebas text-base text-white text-left break-normal drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>*technical info about this page</p>
             </div>
-            <Attribution attribute={freepikBamboo} />
         </div>
     );
 }
