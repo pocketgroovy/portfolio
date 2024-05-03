@@ -21,10 +21,10 @@
     }
 
     .tab-button {
-        @apply block p-4 text-blue-600 bg-gray-100 rounded-lg cursor-pointer select-none
-        active:translate-y-2  active:[box-shadow:0_0px_0_0_#BAB6D0,0_0px_0_0_#D4D8DF]
+        @apply block p-4 text-black bg-gradient-to-t from-transparent via-neutral-100 to-neutral-100 rounded-lg cursor-pointer select-none
+        active:translate-y-2  active:[box-shadow:0_0px_0_0_#D8D6E6,0_0px_0_0_#EFEFE8]
         active:border-b-[0px]
-        transition-all duration-150 [box-shadow:0_3px_0_0_#BAB6D0,0_5px_0_0_#D4D8DF]
+        transition-all duration-150 [box-shadow:0_3px_0_0_#D8D6E6,0_5px_0_0_#EFEFE8]
         border-b-[1px] border-gray-400;
     }
 
@@ -34,19 +34,3 @@
         focus:border-blue-500
     }
 }
-
-
-/* body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-        sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    height: 100vh;
-}
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-        monospace;
-} */

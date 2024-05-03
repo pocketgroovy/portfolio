@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function NavTab(): ReactElement {
     return (
         <div >
-            <ul className="font-jersey25 text-center ">
+            <ul className="font-ubuntu text-center text-black">
                 <li className="mb-2 ">
                     <Link to='/' >
                         <span className="tab-button">
