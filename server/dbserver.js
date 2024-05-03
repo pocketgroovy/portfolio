@@ -10,7 +10,7 @@ const DB_PORT = process.env.DB_PORT || 3660;
 const db = express();
 
 db.use(express.json());
-db.use("/projects", crud);
+db.use("/pgprojects", crud);
 
 
 db.use((req, res, next) => {
@@ -36,8 +36,8 @@ https
   .createServer(
     {
       // ...
-      cert: fs.readFileSync('/etc/ssl/mongodb-test-server1.crt'),
-      key: fs.readFileSync('/etc/ssl/mongodb-test-server1.key'),
+      cert: fs.readFileSync('/etc/ssl/tier-server.crt'),
+      key: fs.readFileSync('/etc/ssl/tier-server.key'),
       // requestCert: true,
       // rejectUnauthorized: false,
       // ca: fs.readFileSync('/etc/ssl/mongodb-test-ca.crt')
