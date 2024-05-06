@@ -1,17 +1,15 @@
 import express from "express";
-import crud from "./routes/crud.js";
+import crud from "./routes/crudrouter.js";
 import fs from 'fs';
 import https from 'https';
 import 'dotenv/config.js';
 import logger from "./dblogger.js";
-
 
 const DB_PORT = process.env.DB_PORT || 3660;
 const db = express();
 
 db.use(express.json());
 db.use("/pgprojects", crud);
-
 
 db.use((req, res, next) => {
   // Log an info message for each incoming request
@@ -47,4 +45,8 @@ https
   )
   .listen(DB_PORT, () => {
     logger.info(`Server listening on port ${DB_PORT}`)
-});
+  });
+
+// db.listen(DB_PORT, () => {
+//   logger.log("info", `Server listening on port ${DB_PORT}`);
+// });
