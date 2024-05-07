@@ -21,7 +21,7 @@
     }
 
     .tab-button {
-        @apply block p-4 text-black bg-gradient-to-t from-transparent via-neutral-100 to-neutral-100 rounded-lg cursor-pointer select-none
+        @apply block p-1 text-black bg-gradient-to-t from-transparent via-neutral-100 to-neutral-100 rounded-lg cursor-pointer select-none
         active:translate-y-2  active:[box-shadow:0_0px_0_0_#D8D6E6,0_0px_0_0_#EFEFE8]
         active:border-b-[1px]
         transition-all duration-150 [box-shadow:0_3px_0_0_#D8D6E6,0_5px_0_0_#EFEFE8]

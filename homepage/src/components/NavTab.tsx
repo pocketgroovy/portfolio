@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom'
 export default function NavTab(): ReactElement {
     return (
         <div >
-            <ul className="font-ubuntu text-center text-black">
-                <li className="mb-2 ">
+            <ul className="font-comfortaa text-2xl text-center text-black">
+                <li className="mb-2">
                     <Link to='/' >
                         <span className="tab-button">
-                            <i className="fa-solid fa-house"></i>
-                            Top / Projects</span>
+                            <i className="p-2 fa-solid fa-house"></i>
+                        Top /
+                             <br /> Projects</span>
                     </Link>
                 </li>
                 <li className="mb-2">
