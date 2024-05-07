@@ -11,7 +11,7 @@ const router = express.Router();
 // get a list of all the records.
 router.get("/", async (req, res) => {
   try {
-    logger.info('yes I was called by get method!')
+    logger.info('Get method called! ')
     const results = await ProjectsModel.find({});
     res.send(results).status(200);
   } catch (error) {

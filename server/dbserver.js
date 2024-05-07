@@ -33,13 +33,8 @@ db.use((err, req, res, next) => {
 https
   .createServer(
     {
-      // ...
       cert: fs.readFileSync('/etc/ssl/tier-server.crt'),
       key: fs.readFileSync('/etc/ssl/tier-server.key'),
-      // requestCert: true,
-      // rejectUnauthorized: false,
-      // ca: fs.readFileSync('/etc/ssl/mongodb-test-ca.crt')
-      // ...
     },
     db
   )

@@ -6,10 +6,7 @@ export default function connectDB() {
     const url = process.env.DB_URI || "";
    
     try {
-      mongoose.connect(url, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      });
+      mongoose.connect(url);
     } catch (err) {
       logger.error(err.message);
       process.exit(1);
