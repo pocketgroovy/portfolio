@@ -19,11 +19,10 @@ export default function App(): ReactElement {
 				<Suspense fallback={<LoadingOrError />}>
 					<Routes>
 						<Route path='/' element={<Projects />} />
-						<Route path='/pgprojects' element={<Projects />} />
 						<Route path=':fruitName' element={<Details />} />
 						<Route path='/aboutMe' element={<InfoAboutMe />} />
 						<Route path='/experience' element={<Experience />} />
-						<Route path='/service' element={<Experience />} />
+						<Route path='/service' element={<Projects />} />
 						<Route path='/contacts' element={<Contacts />} />
 					</Routes>
 				</Suspense>
