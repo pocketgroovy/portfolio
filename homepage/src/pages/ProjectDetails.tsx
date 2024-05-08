@@ -1,12 +1,11 @@
 import { useQuery } from '@tanstack/react-query'
-import getFruits from 'api/getFruits'
 import getProjects from 'api/getProjects'
+import AttributionTag from 'components/AttributionTag'
 // import Head from 'components/Head'
-import ImageAttribution from 'components/ImageAttribution'
 import LoadingOrError from 'components/LoadingOrError'
-import projectStates from 'hooks/projectState'
 import type { ReactElement } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
+import { IAttribute } from 'types/iattribute'
 import { useMediaQuery } from 'utils'
 
 const DESKTOP_IMAGE_WIDTH_PERCENTAGE = 0.4
@@ -30,7 +29,19 @@ export default function ProjectDetails(): ReactElement {
     )
 
     if (!project) {
-    	return <Navigate to='/' replace />
+        return <Navigate to='/' replace />
+    }
+
+    const photoAttributes: IAttribute = {
+        site: {
+            name: 'Unsplash',
+            url: 'https://unsplash.com'
+        },
+        author: {
+            name: project.image.author.name,
+            url: project.image.author.url
+        },
+        type: 'Photo'
     }
 
     const imageWidth =
@@ -42,6 +53,7 @@ export default function ProjectDetails(): ReactElement {
             ? window.innerHeight
             : window.innerHeight * MOBILE_IMAGE_HEIGHT_PERCENTAGE) *
         window.devicePixelRatio
+
 
     return (
         <>
@@ -58,7 +70,8 @@ export default function ProjectDetails(): ReactElement {
                         src={`${project.image.url}&w=${imageWidth}&h=${imageHeight}`}
                         alt={project.title}
                     />
-                    <ImageAttribution author={project.image.author} />
+                    <AttributionTag attribute={photoAttributes} />
+
                 </div>
                 <div className='my-8 sm:my-0 sm:ml-16'>
                     <Link data-testid='BackLink' to='/' className='flex items-center'>

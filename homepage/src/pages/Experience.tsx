@@ -1,9 +1,6 @@
 import type { ReactElement } from 'react'
-import { Link } from 'react-router-dom'
 import { useMediaQuery } from 'utils'
 import mekateimage from '../media/images/izu.png'
-import Career from 'components/Career'
-import Education from 'components/Education'
 import ExperienceTabs from 'components/ExperienceTabs'
 
 
@@ -39,7 +36,7 @@ export default function Experience(): ReactElement {
 					<p className='text-sm'> with my daughter, trip to the Izu penninsula, Japan</p>
 				</div>
 				<div className='col-span-3'>
-                        <ExperienceTabs />
+					<ExperienceTabs />
 				</div>
 			</div>
 		</div>

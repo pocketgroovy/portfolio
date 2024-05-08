@@ -2,7 +2,8 @@ import type { KeyboardEvent, ReactElement } from 'react'
 import { useNavigate } from 'react-router-dom'
 import type { IProject } from '../types/iproject'
 import { useMediaQuery } from 'utils'
-import ImageAttribution from './ImageAttribution'
+import { IAttribute } from 'types/iattribute'
+import AttributionTag from './AttributionTag'
 
 const PREFERRED_IMAGE_WIDTH = 384
 const MOBILE_PADDING = 16
@@ -36,6 +37,18 @@ export default function Project({ project, index }: ProjProp): ReactElement {
 	)
 	const imageHeight = imageWidth / (ASPECT_RATIO_WIDTH / ASPECT_RATIO_HEIGHT)
 
+	const photoAttributes: IAttribute = {
+		site: {
+			name: 'Unsplash',
+			url: 'https://unsplash.com'
+		},
+		author: {
+			name: project.image.author.name,
+			url: project.image.author.url
+		},
+		type: 'Photo'
+	}
+
 	return (
 		<div
 			className='cursor-pointer select-none overflow-hidden rounded-lg shadow-lg focus:border-gray-300 focus:outline-none focus:ring focus:ring-gray-500 focus:ring-opacity-50 dark:shadow-2xl'
@@ -61,12 +74,11 @@ export default function Project({ project, index }: ProjProp): ReactElement {
 					style={{
 						backgroundColor: project.image.color
 					}}
-					src={`${project.image.url}&w=${
-						imageWidth * window.devicePixelRatio
-					}&h=${imageHeight * window.devicePixelRatio}`}
+					src={`${project.image.url}&w=${imageWidth * window.devicePixelRatio
+						}&h=${imageHeight * window.devicePixelRatio}`}
 					alt={project.title}
 				/>
-				<ImageAttribution author={project.image.author} />
+				<AttributionTag attribute={photoAttributes} />
 			</div>
 			<h3 className='p-6 text-xl font-bold'>
 				{project.title}

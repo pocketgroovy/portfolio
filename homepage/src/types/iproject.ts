@@ -4,13 +4,13 @@ export interface IProject {
     year: string
     type: string[]
     image: {
-		author: {
-			name: string
-			url: string
-		}
-		color: string
-		url: string
-	}
+        author: {
+            name: string
+            url: string
+        }
+        color: string
+        url: string
+    }
     createdAt?: string
     lastUpdated?: string
 }

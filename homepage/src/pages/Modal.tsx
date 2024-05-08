@@ -4,7 +4,7 @@ import { FC, ReactElement } from "react";
 interface ModalProps {
     open: boolean;
     onClose: () => void;
-    children: ReactElement|ReactElement[];
+    children: ReactElement | ReactElement[];
 }
 
 export default function Modal(props: ModalProps): ReturnType<FC> {
@@ -20,7 +20,7 @@ export default function Modal(props: ModalProps): ReturnType<FC> {
                 <div className="btn-container text-lg font-bebas text-left break-normal ">
                     <div role='button' onClick={props.onClose}><i className="m-2 fa-solid fa-circle-xmark"></i>Close</div>
                 </div>
+            </div>
         </div>
-      </div>
     );
 }

@@ -7,13 +7,13 @@ import { useQuery } from '@tanstack/react-query'
 import getProjects from 'api/getProjects'
 
 export default function Projects(): ReactElement {
-    const { isPending, isError, error, data } = useQuery({
-        queryKey: ['projects'],
-        queryFn: getProjects
-    })
-    if (isPending || isError) {
-        return <LoadingOrError error={error as Error} />
-    } 
+	const { isPending, isError, error, data } = useQuery({
+		queryKey: ['projects'],
+		queryFn: getProjects
+	})
+	if (isPending || isError) {
+		return <LoadingOrError error={error as Error} />
+	}
 
 	const projects = data.data
 

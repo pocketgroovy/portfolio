@@ -7,5 +7,5 @@ export interface IAttribute {
 		name: string
 		url?: string
 	}
-
+	type: string
 }

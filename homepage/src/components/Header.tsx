@@ -4,8 +4,8 @@ import Typewriter from './Typewriter';
 import ModalButton from './ModalButton';
 import ToolListMainPage from 'modal/ToolListMainPage';
 import NavTab from './NavTab';
-import Attribution from './Attribution';
 import { IAttribute } from 'types/iattribute';
+import AttributionTag from './AttributionTag';
 
 const freepikBamboo: IAttribute = {
     site: {
@@ -14,7 +14,8 @@ const freepikBamboo: IAttribute = {
     },
     author: {
         name: 'ilovehz'
-    }
+    },
+    type: 'Image'
 }
 
 export default function Header(): ReactElement {
@@ -37,7 +38,7 @@ export default function Header(): ReactElement {
                     <p className='font-comfortaa bg-lime-300 rounded-full p-px bg-gradient-to-b from-gray-100 to-transparent md:text-4xl'>Application Developer / Backend / Infra Engineer</p>
                 </div>
                 <ModalButton><ToolListMainPage /></ModalButton>
-                <Attribution attribute={freepikBamboo} />
+                <AttributionTag attribute={freepikBamboo} />
             </div>
         </header>);
 }
