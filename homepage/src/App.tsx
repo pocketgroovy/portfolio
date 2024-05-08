@@ -6,7 +6,7 @@ import './App.css'
 import Header from './components/Header'
 
 const Projects = lazy(async () => import('pages/Projects'))
-const Details = lazy(async () => import('pages/Details'))
+const ProjectDetails = lazy(async () => import('pages/ProjectDetails'))
 const InfoAboutMe = lazy(async () => import('pages/InfoAboutMe'))
 const Experience = lazy(async () => import('pages/Experience'));
 const Contacts = lazy(async () => import('pages/Contacts'));
@@ -19,7 +19,7 @@ export default function App(): ReactElement {
 				<Suspense fallback={<LoadingOrError />}>
 					<Routes>
 						<Route path='/' element={<Projects />} />
-						<Route path=':fruitName' element={<Details />} />
+						<Route path=':projectTitle' element={<ProjectDetails />} />
 						<Route path='/aboutMe' element={<InfoAboutMe />} />
 						<Route path='/experience' element={<Experience />} />
 						<Route path='/service' element={<Projects />} />

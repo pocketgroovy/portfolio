@@ -1,32 +1,21 @@
 import LoadingOrError from 'components/LoadingOrError'
-import { useEffect, useState, type ReactElement } from 'react'
+import { type ReactElement } from 'react'
 import backgroundVideo from '../media/video/dutch-park-flower.mp4'
 import { IProject } from 'types/iproject'
-import getProjects from 'api/getProjects'
 import Project from 'components/Project'
+import { useQuery } from '@tanstack/react-query'
+import getProjects from 'api/getProjects'
 
 export default function Projects(): ReactElement {
+    const { isPending, isError, error, data } = useQuery({
+        queryKey: ['projects'],
+        queryFn: getProjects
+    })
+    if (isPending || isError) {
+        return <LoadingOrError error={error as Error} />
+    } 
 
-	const [projects, setProjects] = useState<IProject[]>([])
-	const [err, setErr] = useState<Error>()
-
-	async function fetchProjects() {
-		getProjects()
-			.then(results => {
-				// console.log('setting projects ' + results.data)
-				setProjects(results.data)
-			}
-			)
-			.catch(err => {
-				setErr(err)
-				console.log(err)
-			}
-			)
-	}
-
-	useEffect(() => {
-		fetchProjects()
-	}, [])
+	const projects = data.data
 
 	return (
 		<div>
@@ -38,10 +27,9 @@ export default function Projects(): ReactElement {
 					<source src={backgroundVideo} type='video/mp4' />
 				</video>
 				<div className='m-5 grid grid-cols-[minmax(0,384px)] place-content-center gap-2 md:m-5 md:grid-cols-[repeat(1,minmax(0,384px))] xl:grid-cols-[repeat(3,384px)]'>
-					{projects ? (projects.map((project: IProject, index) => (
+					{projects.map((project: IProject, index) => (
 						<Project key={project._id} project={project} index={index} />
-					))) :
-						<LoadingOrError error={err} />}
+					))}
 				</div>
 			</div>
 		</div>
