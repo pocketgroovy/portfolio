@@ -78,9 +78,10 @@ export default function Project({ project, index }: ProjProp): ReactElement {
 						}&h=${imageHeight * window.devicePixelRatio}`}
 					alt={project.title}
 				/>
+				<div className='absolute top-0 h-full w-full bg-gradient-to-b from-transparent via-transparent to-current text-black text-opacity-50' />
 				<AttributionTag attribute={photoAttributes} />
 			</div>
-			<h3 className='p-6 text-xl font-bold'>
+			<h3 className='p-6 text-xl font-bold text-slate-300'>
 				{project.title}
 			</h3>
 		</div>
