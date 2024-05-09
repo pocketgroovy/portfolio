@@ -32,13 +32,13 @@ export default function AboutMe(): ReactElement {
 
   return (
     <div>
-      <div
+      <button
         className='fixed text-left bg-clip-text bg-green-500'
         role='button'
         onClick={onClick}
         onKeyDown={onKeyDown}>
         <div className='m-5 flex items-center' >
-          <p className=' font-luckiest text-3xl m-3 bg-gradient-to-l from-emerald-300 to-white to-80%  hover:text-emerald-700'>About Me</p>
+          <p className=' font-luckiest text-3xl m-3 text-white'>About Me</p>
           <img
             className='rounded-full '
             loading={
@@ -61,7 +61,7 @@ export default function AboutMe(): ReactElement {
             alt='about me'
           />
         </div>
-      </div>
+      </button>
     </div>
   );
 }

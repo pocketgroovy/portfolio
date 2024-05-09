@@ -4,11 +4,11 @@ export default function Career(): ReactElement {
 
     return (<div>
         <h1
-            className='experience-title'>
+            className='list-title'>
             Experience
         </h1>
 
-        <div className='experience-task-style'>
+        <div className='list-task-style'>
             <h1 className="jobtitle">Rakuten | Infrastructure Engineer | Tokyo, Japan					              2021-2024</h1>
             <ul className="tasklist">
                 <li>Reduced Azure Kubernetes Service upgrade process time by 80% through documentation of past troubleshooting efforts and standardization of regression tests</li>

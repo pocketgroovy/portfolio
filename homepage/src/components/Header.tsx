@@ -4,7 +4,7 @@ import Typewriter from './Typewriter';
 import ModalButton from './ModalButton';
 import ToolListMainPage from 'modal/ToolListMainPage';
 import NavTab from './NavTab';
-import { IAttribute } from 'types/iattribute';
+import type { IAttribute } from 'types/iattribute';
 import AttributionTag from './AttributionTag';
 
 const freepikBamboo: IAttribute = {

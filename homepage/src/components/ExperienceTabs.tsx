@@ -14,7 +14,7 @@ export default function ExperienceTabs(): ReactElement {
                 <Tab>Experience</Tab>
                 <Tab>Education</Tab>
                 <Tab>Certificates</Tab>
-                <Tab>Tech Stack</Tab>
+                <Tab>Tech</Tab>
             </TabList>
 
             <TabPanel>

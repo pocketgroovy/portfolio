@@ -1,11 +1,11 @@
 import Modal from "pages/Modal";
 import { FC, useState } from "react";
 import { useMediaQuery } from 'utils'
-import infoButton from '../media/images/open.png'
+import infoButton from '../media/images/stack.png'
 import { ITechProps } from "types/itechProps";
 
 
-const PREFERRED_IMAGE_WIDTH = 100
+const PREFERRED_IMAGE_WIDTH = 300
 const MOBILE_PADDING = 16
 const ASPECT_RATIO_WIDTH = 16
 const ASPECT_RATIO_HEIGHT = 9
@@ -27,7 +27,7 @@ export default function ModalButton(props: ITechProps): ReturnType<FC> {
     }
 
     return (
-        <div className="ml-10">
+        <div className="m-10">
             <Modal open={showModal} onClose={toggleModal}>
                 {props.children}
             </Modal>
@@ -53,7 +53,7 @@ export default function ModalButton(props: ITechProps): ReturnType<FC> {
                         alt='info button'
                     />
                 </div>
-                <p className='font-bebas text-base text-white text-left break-normal drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>*technical info about this page</p>
+                {/* <p className='font-bebas text-base text-white text-left break-normal drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>*technical info about this page</p> */}
             </div>
         </div>
     );

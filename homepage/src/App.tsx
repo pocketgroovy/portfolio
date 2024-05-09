@@ -4,6 +4,7 @@ import { lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Header from './components/Header'
+import Services from 'pages/Services'
 
 const Projects = lazy(async () => import('pages/Projects'))
 const ProjectDetails = lazy(async () => import('pages/ProjectDetails'))
@@ -22,7 +23,7 @@ export default function App(): ReactElement {
 						<Route path=':projectTitle' element={<ProjectDetails />} />
 						<Route path='/aboutMe' element={<InfoAboutMe />} />
 						<Route path='/experience' element={<Experience />} />
-						<Route path='/service' element={<Projects />} />
+						<Route path='/service' element={<Services />} />
 						<Route path='/contacts' element={<Contacts />} />
 					</Routes>
 				</Suspense>
