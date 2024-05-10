@@ -5,7 +5,7 @@ export default function HireForProjects(): ReactElement {
     return (<div>
         <h1
             className='list-title'>
-            let&apos;s work together!
+            I&apos;m here to help!
         </h1>
 
         <ol className="space-y-4 text-gray-500 list-inside dark:text-gray-400">
