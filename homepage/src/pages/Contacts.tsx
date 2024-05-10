@@ -1,13 +1,8 @@
 import type { ReactElement } from 'react'
-import { Link } from 'react-router-dom'
 import { useMediaQuery } from 'utils'
 import mekateimage from '../media/images/izu.png'
-import Career from 'components/Career'
-import Education from 'components/Education'
-import ExperienceTabs from 'components/ExperienceTabs'
 import Card from 'components/Card'
 import ContactForm from 'components/ContactForm'
-
 
 const DESKTOP_IMAGE_WIDTH_PERCENTAGE = 0.3
 const MOBILE_IMAGE_HEIGHT_PERCENTAGE = 0.4

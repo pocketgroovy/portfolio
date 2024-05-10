@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Career from './Career';
@@ -14,7 +14,7 @@ export default function ExperienceTabs(): ReactElement {
                 <Tab>Experience</Tab>
                 <Tab>Education</Tab>
                 <Tab>Certificates</Tab>
-                <Tab>Tech Stack</Tab>
+                <Tab>Tech</Tab>
             </TabList>
 
             <TabPanel>

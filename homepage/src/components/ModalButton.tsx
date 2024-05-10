@@ -1,31 +1,17 @@
 import Modal from "pages/Modal";
-import { FC, useState, ReactElement } from "react";
+import { type FC, useState } from "react";
 import { useMediaQuery } from 'utils'
-import infoButton from '../media/images/open.png'
-import Attribution from "./Attribution";
-import { IAttribute } from "interface/iattribute";
+import infoButton from '../media/images/stack.png'
+import type { ITechProps } from "types/itechProps";
 
 
-const PREFERRED_IMAGE_WIDTH = 100
+const PREFERRED_IMAGE_WIDTH = 300
 const MOBILE_PADDING = 16
 const ASPECT_RATIO_WIDTH = 16
 const ASPECT_RATIO_HEIGHT = 9
 
-interface TechProps {
-    children: ReactElement | ReactElement[];
-}
 
-const freepikBamboo: IAttribute = {
-    site: {
-        name: 'freepik',
-        url: 'https://www.freepik.com/'
-    },
-    author: {
-        name: 'ilovehz'
-    }
-}
-
-export default function ModalButton(props: TechProps): ReturnType<FC> {
+export default function ModalButton(props: ITechProps): ReturnType<FC> {
     const isTabletAndUp = useMediaQuery('(min-width: 600px)')
 
     const imageWidth = Math.min(
@@ -36,18 +22,18 @@ export default function ModalButton(props: TechProps): ReturnType<FC> {
 
     const [showModal, setShowModal] = useState<boolean>(false);
 
-    function toggleModal() {
+    function onToggleModal(): void {
         setShowModal(!showModal);
     }
 
     return (
-        <div className="ml-10">
-            <Modal open={showModal} onClose={toggleModal}>
+        <div className="m-10">
+            <Modal open={showModal} onClose={onToggleModal}>
                 {props.children}
             </Modal>
-            <div className="fixed"
-                role='button'
-                onClick={toggleModal}>
+            <button className="fixed"
+                type='button'
+                onClick={onToggleModal}>
                 <div >
                     <img
                         loading={
@@ -67,9 +53,7 @@ export default function ModalButton(props: TechProps): ReturnType<FC> {
                         alt='info button'
                     />
                 </div>
-                <p className='font-bebas text-base text-white text-left break-normal drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>*technical info about this page</p>
-            </div>
-            <Attribution attribute={freepikBamboo} />
+            </button>
         </div>
     );
 }

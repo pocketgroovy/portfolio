@@ -1,5 +1,5 @@
-import { ChangeEvent, FormEvent, ReactElement, useState } from 'react';
-
+import type { ChangeEvent, FormEvent, ReactElement } from 'react';
+import { useState } from 'react';
 
 
 export default function ContactForm(): ReactElement {
@@ -10,10 +10,10 @@ export default function ContactForm(): ReactElement {
 		message: '',
 	});
 
-	//Result if message was sent or not
+	//Result if message was sent or not 
 	const [result, setResult] = useState('');
 
-	//Status of while message is being sent
+	//Status of while message is being sent 
 	const [status, setStatus] = useState('Submit');
 
 	const resetEmailForm = () => {
@@ -36,7 +36,7 @@ export default function ContactForm(): ReactElement {
 		}
 	}
 
-	const handleEmailMessageChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+	const onHandleEmailMessageChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
 		event.persist();
 		const target = event.target;
 		const name = target.name;
@@ -52,7 +52,7 @@ export default function ContactForm(): ReactElement {
 		}
 	}
 
-	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+	const onHandleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		setResult('');
 		e.preventDefault();
 		setStatus('Sending...');
@@ -65,8 +65,6 @@ export default function ContactForm(): ReactElement {
 			message: target.message.value
 		};
 
-		console.log(details);
-
 		try {
 			let response = await fetch('https://mail.pocketgroovy.com/send', {
 				method: 'POST',
@@ -76,12 +74,12 @@ export default function ContactForm(): ReactElement {
 				body: JSON.stringify(details),
 			});
 			setStatus('Submit');
-			let result = await response.json();
+			let responseResult = await response.json();
 
-			if (result.status === 'success') {
+			if (responseResult.status === 'success') {
 				setResult('Message Sent!');
 				resetEmailForm();
-			} else if (result.status === 'fail') {
+			} else if (responseResult.status === 'fail') {
 				alert('Uh oh! Message failed to send.');
 			}
 		} catch (error) {
@@ -94,12 +92,12 @@ export default function ContactForm(): ReactElement {
 		<div className="p-1 font-ubuntu float-center
 						rounded-xl shadow-2xl bg-white bg-clip-border  ">
 			<form id='contact-form' className='form'
-				onSubmit={handleSubmit}
+				onSubmit={onHandleSubmit}
 				method='POST'>
 				<label className="text-2xl"> Contact Form
 					<div>
 						<label className="text-sm">Select Category
-							<br></br>
+							<br/>
 							<select name='subject' className="contact-input" required>
 								<option value="">
 									-- Select Your Query --
@@ -115,7 +113,7 @@ export default function ContactForm(): ReactElement {
 								</option>
 							</select>
 						</label>
-						<br></br>
+						<br/>
 						<div>
 							<label className="text-sm">Name
 								<input name='username' className="contact-input"
@@ -136,7 +134,7 @@ export default function ContactForm(): ReactElement {
 								value={emailForm.email}
 								onChange={handleEmailFormChange} />
 						</label>
-						<br></br>
+						<br/>
 						<label className="text-sm">
 							Message
 							<textarea name='message' className="contact-input"
@@ -144,11 +142,10 @@ export default function ContactForm(): ReactElement {
 								placeholder='message (max 300 characters)*'
 								required={true}
 								value={emailForm.message}
-								onChange={handleEmailMessageChange}
-							>
-							</textarea>
+								onChange={onHandleEmailMessageChange}
+							/>
 						</label>
-						<br></br>
+						<br/>
 						<button className="m-2 bg-blue-500 hover:bg-blue-700 
 										text-white font-bold 
 										py-2 px-4 rounded"
