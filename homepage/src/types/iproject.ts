@@ -14,3 +14,8 @@ export interface IProject {
     createdAt?: string
     lastUpdated?: string
 }
+
+export interface ProjProp {
+	project: IProject
+	index: number
+}

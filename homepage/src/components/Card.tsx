@@ -1,5 +1,6 @@
+import type { ReactElement } from "react";
 
-export default function Card() {
+export default function Card(): ReactElement  {
 	return (
 		<div >
 			<div className="font-ubuntu font-semibold float-center text-xl
@@ -11,7 +12,7 @@ export default function Card() {
 					</h5>
 					<ul>
 						<li className="m-5 text-center">
-							<span><i className="fa-solid fa-envelope" ></i> </span>
+							<span><i className="fa-solid fa-envelope" /> </span>
 							<span>info@pocketgroovy.com</span>
 						</li>
 						<p className="text-left">

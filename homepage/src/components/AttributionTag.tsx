@@ -1,4 +1,4 @@
-import { IAttribute } from 'types/iattribute'
+import type { IAttribute } from 'types/iattribute'
 import type { MouseEvent, ReactElement } from 'react'
 
 interface Properties {
@@ -11,7 +11,6 @@ function onClick(event: MouseEvent): void {
 
 export default function Attribution({ attribute }: Properties): ReactElement {
     return (
-        <>
             <div className='absolute bottom-1 right-1 px-1 text-xs text-white'>
                 <span>{attribute.type} </span>
                 <span>by </span>
@@ -35,6 +34,5 @@ export default function Attribution({ attribute }: Properties): ReactElement {
                     {attribute.site.name}
                 </a>
             </div>
-        </>
     )
 }

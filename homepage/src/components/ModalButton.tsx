@@ -1,8 +1,8 @@
 import Modal from "pages/Modal";
-import { FC, useState } from "react";
+import { type FC, useState } from "react";
 import { useMediaQuery } from 'utils'
 import infoButton from '../media/images/stack.png'
-import { ITechProps } from "types/itechProps";
+import type { ITechProps } from "types/itechProps";
 
 
 const PREFERRED_IMAGE_WIDTH = 300
@@ -22,18 +22,18 @@ export default function ModalButton(props: ITechProps): ReturnType<FC> {
 
     const [showModal, setShowModal] = useState<boolean>(false);
 
-    function toggleModal() {
+    function onToggleModal(): void {
         setShowModal(!showModal);
     }
 
     return (
         <div className="m-10">
-            <Modal open={showModal} onClose={toggleModal}>
+            <Modal open={showModal} onClose={onToggleModal}>
                 {props.children}
             </Modal>
-            <div className="fixed"
-                role='button'
-                onClick={toggleModal}>
+            <button className="fixed"
+                type='button'
+                onClick={onToggleModal}>
                 <div >
                     <img
                         loading={
@@ -53,8 +53,7 @@ export default function ModalButton(props: ITechProps): ReturnType<FC> {
                         alt='info button'
                     />
                 </div>
-                {/* <p className='font-bebas text-base text-white text-left break-normal drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>*technical info about this page</p> */}
-            </div>
+            </button>
         </div>
     );
 }

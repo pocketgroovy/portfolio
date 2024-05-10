@@ -8,9 +8,10 @@ export default function NavTab(): ReactElement {
                 <li className="mb-2">
                     <Link to='/' >
                         <span className="nav-button">
-                            <i className="p-2 fa-solid fa-house"></i>
-                            Top /
-                            <br /> Projects</span>
+                            <i className="p-1 fa-solid fa-house" />
+                                Top /
+                            <br />  Projects
+                        </span>
                     </Link>
                 </li>
                 <li className="mb-2">
@@ -25,7 +26,7 @@ export default function NavTab(): ReactElement {
                 </li>
                 <li className="mb-2 ">
                     <Link to='/contacts'>
-                        <span className="nav-button flex"><i className="mr-2 fa-regular fa-message flex items-start"></i>Contacts</span>
+                        <span className="nav-button flex"><i className="mr-2 fa-regular fa-message flex items-start" />Contacts</span>
                     </Link>
                 </li>
             </ul>

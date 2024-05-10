@@ -1,8 +1,8 @@
 import type { KeyboardEvent, ReactElement } from 'react'
 import { useNavigate } from 'react-router-dom'
-import type { IProject } from '../types/iproject'
+import type { ProjProp } from '../types/iproject'
 import { useMediaQuery } from 'utils'
-import { IAttribute } from 'types/iattribute'
+import type { IAttribute } from 'types/iattribute'
 import AttributionTag from './AttributionTag'
 
 const PREFERRED_IMAGE_WIDTH = 384
@@ -10,11 +10,6 @@ const MOBILE_PADDING = 16
 const ASPECT_RATIO_WIDTH = 16
 const ASPECT_RATIO_HEIGHT = 9
 const IMAGE_INDEX_BELOW_THE_FOLD = 3
-
-interface ProjProp {
-	project: IProject
-	index: number
-}
 
 export default function Project({ project, index }: ProjProp): ReactElement {
 	const isTabletAndUp = useMediaQuery('(min-width: 600px)')

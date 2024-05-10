@@ -5,7 +5,7 @@ import AttributionTag from 'components/AttributionTag'
 import LoadingOrError from 'components/LoadingOrError'
 import type { ReactElement } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
-import { IAttribute } from 'types/iattribute'
+import type { IAttribute } from 'types/iattribute'
 import { useMediaQuery } from 'utils'
 
 const DESKTOP_IMAGE_WIDTH_PERCENTAGE = 0.4
@@ -23,7 +23,7 @@ export default function ProjectDetails(): ReactElement {
         return <LoadingOrError error={error as Error} />
     }
 
-    //The 1st 'data' from usrQuery and the 2nd 'data' from Axios. useQuery returns results in 'data', Axios also put the response in 'data'. 
+    //The 1st 'data' from usrQuery and the 2nd 'data' from Axios. useQuery returns results in 'data', Axios also put the response in 'data'.    
     const project = data.data.find(
         aProject => aProject.title.toLowerCase() === projectTitle?.toLowerCase()
     )
@@ -61,7 +61,6 @@ export default function ProjectDetails(): ReactElement {
             <div className='flex min-h-screen flex-col items-center sm:flex-row'>
                 <div className='relative'>
                     <img
-                        data-testid='FruitImage'
                         width={imageWidth}
                         height={imageHeight}
                         style={{
@@ -80,28 +79,16 @@ export default function ProjectDetails(): ReactElement {
                     </Link>
 
                     <h1
-                        data-testid='FruitName'
                         className='mt-2 text-6xl font-bold sm:mt-8'
                     >
                         {project.title}
                     </h1>
                     <h2 className='mt-3 text-xl text-gray-500 dark:text-gray-400'>
-                        Vitamins per 100 g (3.5 oz)
+                        test
                     </h2>
                     <table className='mt-8 text-lg'>
-                        <thead>
-                            <tr>
-                                <th className='px-4 py-2'>Vitamin</th>
-                                <th className='px-4 py-2'>Quantity</th>
-                            </tr>
-                        </thead>
                         <tbody>
-                            {/* {fruit.metadata.map(({ name, value }) => (
-								<tr key={`FruitVitamin-${name}`} className='font-medium'>
-									<td className='border border-gray-300 px-4 py-2'>{name}</td>
-									<td className='border border-gray-300 px-4 py-2'>{value}</td>
-								</tr>
-							))} */}
+                            test body
                         </tbody>
                     </table>
                 </div>
