@@ -79,18 +79,58 @@ export default function ProjectDetails(): ReactElement {
                     </Link>
 
                     <h1
-                        className='mt-2 text-6xl font-bold sm:mt-8'
+                        className='mt-2 text-5xl font-bold sm:mt-8'
                     >
                         {project.title}
                     </h1>
-                    <h2 className='mt-3 text-xl text-gray-500 dark:text-gray-400'>
-                        test
+                    <h2 className='mt-3 text-xl text-gray-900 dark:text-gray-400'>
+                        *Please click the tech stack button for tools I used
                     </h2>
+
                     <table className='mt-8 text-lg'>
-                        <tbody>
-                            test body
+                        <thead>
+                            <tr >
+                                <th className='px-8 py-2'>Function</th>
+                                <th className='px-8 py-2'>Host</th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr >
+                                <td className='border border-gray-300 px-8 py-2'>Web Host</td>
+                                <td className='border border-gray-300 px-8 py-2'>Hostinger Web hosting</td>
+                            </tr>
+                            <tr >
+                                <td className='border border-gray-300 px-8 py-2'>Email Server</td>
+                                <td className='border border-gray-300 px-8 py-2'>Hostinger VPS Ubuntu</td>
+                            </tr>
+                            <tr >
+                                <td className='border border-gray-300 px-8 py-2'> DB Server</td>
+                                <td className='border border-gray-300 px-8 py-2'>Hostinger VPS Ubuntu</td>
+                            </tr>
+
+                            {/* {fruit.metadata.map(({ name, value }) => (
+								<tr key={`FruitVitamin-${name}`} className='font-medium'>
+									<td className='border border-gray-300 px-4 py-2'>{name}</td>
+									<td className='border border-gray-300 px-4 py-2'>{value}</td>
+								</tr>
+							))} */}
                         </tbody>
                     </table>
+                    <h1 className='font-bold underline decoration-from-font mt-5 my-5 text-3xl'>
+                        Behind the Scenes: Insights into Development
+                    </h1>
+                    <div className='ps-px pr-64 pb-10 font-serif4 text-xl  text-justify tracking-wide space-y-5'>
+                        <p>The architecture for these portfolio webpages is based on the 3 tiers: Presentation, Application, and Data tiers. The main tools used were the MERN stack, comprising MongoDB, Express, React, and Node.</p>
+                        <p>I chose this stack primarily for its popularity, which makes it easier to obtain the necessary information.</p>
+                        <p>As for the infrastructure setup, I first configured the Hostinger website to host the presentation pages, which users will interact with. Then, I set up a VPS (Virtual Private Server) to host email and database servers using Express.</p>
+                        <p>For enhanced security, I utilized Nginx to reverse-proxy requests to the servers. Speaking of security, SSL was essential for me. Hostinger Web Hosting provides free SSL certificates, eliminating the need for manual setup. All I had to do was associate my domain with the web hosting, and SSL was installed automatically.</p>
+                        <p>The email and database servers, residing in the VPS, were assigned to subdomains. Although SSL installation was not automatic for these, Hostinger provided documentation (<a className='text-blue-600 visited:text-purple-600 ...' href="https://support.hostinger.com/en/articles/6865487-how-to-install-ssl-on-vps-using-certbot">https://support.hostinger.com/en/articles/6865487-how-to-install-ssl-on-vps-using-certbot</a>), making the setup relatively straightforward.</p>
+                        <p>Having longer career as a backend engineer, most of the frontend tools used here were new to me. Learning and trial and error took some time. I've spent about 4-5 weeks to get to where you see now, including all the infrastructure setups.</p>
+                        <p>Please feel free to contat me for any information!</p>
+                        <Link className='font-bold' to={'/contacts'}>
+                            <span className="flex"><i className="mr-2 fa-regular fa-message flex items-start" />CONTACTS</span>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </>
