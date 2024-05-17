@@ -2,13 +2,14 @@ import { useQuery } from '@tanstack/react-query'
 import getProjects from 'api/getProjects'
 import AttributionTag from 'components/AttributionTag'
 import ImagePane from 'components/ImagePane'
-// import Head from 'components/Head'
 import LoadingOrError from 'components/LoadingOrError'
 import type { ReactElement } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import type { IAttribute } from 'types/iattribute'
 import { useMediaQuery } from 'utils'
 import image from '../media/images/mern.png'
+import gituhubimgae from '../media/images/github-mark.png'
+
 
 
 const DESKTOP_IMAGE_WIDTH_PERCENTAGE = 0.4
@@ -26,7 +27,7 @@ export default function ProjectDetails(): ReactElement {
         return <LoadingOrError error={error as Error} />
     }
 
-    //The 1st 'data' from usrQuery and the 2nd 'data' from Axios. useQuery returns results in 'data', Axios also put the response in 'data'.    
+    //  The 1st 'data' from usrQuery and the 2nd 'data' from Axios. useQuery returns results in 'data', Axios also put the response in 'data'.
     const project = data.data.find(
         aProject => aProject.title.toLowerCase() === projectTitle?.toLowerCase()
     )
@@ -59,8 +60,6 @@ export default function ProjectDetails(): ReactElement {
 
 
     return (
-        <>
-            {/* <Head title={fruit.name} /> */}
             <div className='flex min-h-screen flex-col items-center sm:flex-row'>
                 <div className='relative'>
                     <img
@@ -110,13 +109,6 @@ export default function ProjectDetails(): ReactElement {
                                 <td className='border border-gray-300 px-8 py-2'> DB Server</td>
                                 <td className='border border-gray-300 px-8 py-2'>Hostinger VPS Ubuntu</td>
                             </tr>
-
-                            {/* {fruit.metadata.map(({ name, value }) => (
-								<tr key={`FruitVitamin-${name}`} className='font-medium'>
-									<td className='border border-gray-300 px-4 py-2'>{name}</td>
-									<td className='border border-gray-300 px-4 py-2'>{value}</td>
-								</tr>
-							))} */}
                         </tbody>
                     </table>
                     <h1 className='font-bold underline decoration-from-font mt-5 my-5 text-3xl'>
@@ -130,14 +122,14 @@ export default function ProjectDetails(): ReactElement {
                         <p>For enhanced security, I utilized Nginx to reverse-proxy requests to the servers. Speaking of security, SSL was essential for me. Hostinger Web Hosting provides free SSL certificates, eliminating the need for manual setup. All I had to do was associate my domain with the web hosting, and SSL was installed automatically.</p>
                         <p>The email and database servers, residing in the VPS, were assigned to subdomains. Although SSL installation was not automatic for these, Hostinger provided documentation (<a className='text-blue-600 visited:text-purple-600 ...' href="https://support.hostinger.com/en/articles/6865487-how-to-install-ssl-on-vps-using-certbot">https://support.hostinger.com/en/articles/6865487-how-to-install-ssl-on-vps-using-certbot</a>), making the setup relatively straightforward.</p>
                         <ImagePane imagePath={image} imageTitle='mern' />
+                        <a className='text-blue-600 visited:text-purple-600 ...' href='https://github.com/pocketgroovy/portfolio' target="_blank"> <img className='h-5 w-5' src={gituhubimgae} alt='Code in github' />  Check Code in Github</a>
                         <p> Please feel free to contat me!</p>
 
-                        <Link className='font-bold' to={'/contacts'}>
+                        <Link className='font-bold' to='/contacts'>
                             <span className="flex"><i className="mr-2 fa-regular fa-message flex items-start" />CONTACTS</span>
                         </Link>
                     </div>
                 </div>
             </div>
-        </>
     )
 }
