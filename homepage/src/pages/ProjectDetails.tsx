@@ -9,11 +9,8 @@ import type { IAttribute } from 'types/iattribute'
 import { useMediaQuery } from 'utils'
 import image from '../media/images/mern.png'
 import gituhubimgae from '../media/images/github-mark.png'
+import portfolioImage from '../media/images/portfolio.png'
 
-
-
-const DESKTOP_IMAGE_WIDTH_PERCENTAGE = 0.4
-const MOBILE_IMAGE_HEIGHT_PERCENTAGE = 0.3
 
 export default function ProjectDetails(): ReactElement {
     const isTabletAndUp = useMediaQuery('(min-width: 600px)')
@@ -28,6 +25,7 @@ export default function ProjectDetails(): ReactElement {
     }
 
     //  The 1st 'data' from usrQuery and the 2nd 'data' from Axios. useQuery returns results in 'data', Axios also put the response in 'data'.
+    
     const project = data.data.find(
         aProject => aProject.title.toLowerCase() === projectTitle?.toLowerCase()
     )
@@ -50,15 +48,18 @@ export default function ProjectDetails(): ReactElement {
 
     const imageWidth =
         (isTabletAndUp
-            ? window.innerWidth * DESKTOP_IMAGE_WIDTH_PERCENTAGE
+            ? window.innerWidth 
             : window.innerWidth) * window.devicePixelRatio
     const imageHeight =
         (isTabletAndUp
             ? window.innerHeight
-            : window.innerHeight * MOBILE_IMAGE_HEIGHT_PERCENTAGE) *
-        window.devicePixelRatio
+            : window.innerHeight) * window.devicePixelRatio
 
-
+    let defaultImage = portfolioImage
+    if(project.image.url !== ''){
+        defaultImage = project.image.url
+    }
+  
     return (
             <div className='flex min-h-screen flex-col items-center sm:flex-row'>
                 <div className='relative'>
@@ -68,7 +69,7 @@ export default function ProjectDetails(): ReactElement {
                         style={{
                             backgroundColor: project.image.color
                         }}
-                        src={`${project.image.url}&w=${imageWidth}&h=${imageHeight}`}
+                        src={defaultImage}
                         alt={project.title}
                     />
                     <AttributionTag attribute={photoAttributes} />
@@ -122,7 +123,7 @@ export default function ProjectDetails(): ReactElement {
                         <p>For enhanced security, I utilized Nginx to reverse-proxy requests to the servers. Speaking of security, SSL was essential for me. Hostinger Web Hosting provides free SSL certificates, eliminating the need for manual setup. All I had to do was associate my domain with the web hosting, and SSL was installed automatically.</p>
                         <p>The email and database servers, residing in the VPS, were assigned to subdomains. Although SSL installation was not automatic for these, Hostinger provided documentation (<a className='text-blue-600 visited:text-purple-600 ...' href="https://support.hostinger.com/en/articles/6865487-how-to-install-ssl-on-vps-using-certbot">https://support.hostinger.com/en/articles/6865487-how-to-install-ssl-on-vps-using-certbot</a>), making the setup relatively straightforward.</p>
                         <ImagePane imagePath={image} imageTitle='mern' />
-                        <a className='text-blue-600 visited:text-purple-600 ...' href='https://github.com/pocketgroovy/portfolio' target="_blank"> <img className='h-5 w-5' src={gituhubimgae} alt='Code in github' />  Check Code in Github</a>
+                        <a className='text-blue-600 visited:text-purple-600 ...' href='https://github.com/pocketgroovy/portfolio' target="_blank" rel="noreferrer" > <img className='h-5 w-5' src={gituhubimgae} alt='Code in github' />  Check Code in Github</a>
                         <p> Please feel free to contat me!</p>
 
                         <Link className='font-bold' to='/contacts'>

@@ -4,6 +4,7 @@ import type { ProjProp } from '../types/iproject'
 import { useMediaQuery } from 'utils'
 import type { IAttribute } from 'types/iattribute'
 import AttributionTag from './AttributionTag'
+import portfolioImage from '../media/images/portfolio.png'
 
 const PREFERRED_IMAGE_WIDTH = 384
 const MOBILE_PADDING = 16
@@ -44,6 +45,11 @@ export default function Project({ project, index }: ProjProp): ReactElement {
 		type: 'Photo'
 	}
 
+	let defaultImage = portfolioImage
+    if(project.image.url !== ''){
+        defaultImage = `${project.image.url}&w=${imageWidth * window.devicePixelRatio
+		}&h=${imageHeight * window.devicePixelRatio}`}
+	
 	return (
 		<div
 			className='cursor-pointer select-none overflow-hidden rounded-lg shadow-lg focus:border-gray-300 focus:outline-none focus:ring focus:ring-gray-500 focus:ring-opacity-50 dark:shadow-2xl'
@@ -69,8 +75,7 @@ export default function Project({ project, index }: ProjProp): ReactElement {
 					style={{
 						backgroundColor: project.image.color
 					}}
-					src={`${project.image.url}&w=${imageWidth * window.devicePixelRatio
-						}&h=${imageHeight * window.devicePixelRatio}`}
+					src={defaultImage}
 					alt={project.title}
 				/>
 				<div className='absolute top-0 h-full w-full bg-gradient-to-b from-transparent via-transparent to-current text-black text-opacity-50' />
