@@ -4,7 +4,6 @@ import type { ProjProp } from '../types/iproject'
 import { useMediaQuery } from 'utils'
 import type { IAttribute } from 'types/iattribute'
 import AttributionTag from './AttributionTag'
-import portfolioImage from '../media/images/portfolio.png'
 
 const PREFERRED_IMAGE_WIDTH = 384
 const MOBILE_PADDING = 16
@@ -18,7 +17,7 @@ export default function Project({ project, index }: ProjProp): ReactElement {
 	const navigate = useNavigate()
 	function onClick(): void {
 		window.scrollTo(0, 0)
-		navigate(project.title.toLowerCase())
+		navigate(project.title.replace(/\s/g, ""))
 	}
 
 	function onKeyDown(event: KeyboardEvent): void {
@@ -45,12 +44,12 @@ export default function Project({ project, index }: ProjProp): ReactElement {
 		type: 'Photo'
 	}
 
-	let defaultImage = portfolioImage
+	// handle differently for local images and online images
     if(project.image.url !== '' && project.image.author.name !== 'Yoshi Miyamoto'){
-        defaultImage = `${project.image.url}&w=${imageWidth * window.devicePixelRatio
+       var defaultImage = `${project.image.url}&w=${imageWidth * window.devicePixelRatio
 		}&h=${imageHeight * window.devicePixelRatio}`}
 	if(project.image.author.name == 'Yoshi Miyamoto'){
-		defaultImage = `${project.image.url}`
+		defaultImage = "images/" + project.image.url
 	}
 	
 	return (

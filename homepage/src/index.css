@@ -41,4 +41,9 @@
         text-gray-600 text-sm rounded-lg w-full p-2.5
         focus:border-blue-500
     }
+
+    a.outer {
+        @apply underline text-blue-600 hover:text-blue-800 visited:text-purple-600
+     }
+     
 }
