@@ -10,7 +10,7 @@ interface ModalProps {
 export default function Modal(props: ModalProps): ReturnType<FC> {
     return (
         <div className={`${"modal"} ${props.open ? "display-block" : "display-none"}`}>
-            <div className="modal-main">
+            <div className="modal-main text-black">
                 <div className="modal-head">
                     <p className="text-lg font-bebas text-left break-normal">Main Tools Used To Make This Website</p>
                 </div>

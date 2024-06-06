@@ -21,7 +21,8 @@ const config = {
 				ubuntu: ['"Ubuntu"', ..._theme.fontFamily.sans],
 				comfortaa: ['"Comfortaa"', ..._theme.fontFamily.serif],
 				jersey25: ['"Jersey 25"', ..._theme.fontFamily.serif],
-				serif4: ['"Source Serif 4"', ..._theme.fontFamily.serif]
+				serif4: ['"Source Serif 4"', ..._theme.fontFamily.serif],
+				raleway: ['"Raleway"', ..._theme.fontFamily.serif]
 			},
 			backgroundImage: {
 				'bamboo-pattern': "url('./media/images/bamboo-raft.jpg')"

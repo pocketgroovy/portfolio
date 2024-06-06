@@ -2,7 +2,7 @@ import type { ReactElement } from "react";
 
 export default function ToolListMainPage(): ReactElement {
     return (
-        <ul className="list-outside list-disc text-lg">
+        <ul className="list-outside list-disc text-lg ">
             <li>react <span className="text-sm" >:UI library</span></li>
             <li>typescript <span className="text-sm" >:language</span></li>
             <li>tailwindcss <span className="text-sm" >:css framework</span></li>
