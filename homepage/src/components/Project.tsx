@@ -46,9 +46,12 @@ export default function Project({ project, index }: ProjProp): ReactElement {
 	}
 
 	let defaultImage = portfolioImage
-    if(project.image.url !== ''){
+    if(project.image.url !== '' && project.image.author.name !== 'Yoshi Miyamoto'){
         defaultImage = `${project.image.url}&w=${imageWidth * window.devicePixelRatio
 		}&h=${imageHeight * window.devicePixelRatio}`}
+	if(project.image.author.name == 'Yoshi Miyamoto'){
+		defaultImage = `${project.image.url}`
+	}
 	
 	return (
 		<div
