@@ -17,7 +17,7 @@
     }
 
     .list-task-style {
-        @apply space-y-2 font-normal break-words tracking-wider;
+        @apply space-y-2 font-raleway break-words tracking-wider;
     }
 
     .nav-button {

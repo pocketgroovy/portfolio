@@ -7,7 +7,7 @@ import type { ReactElement } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import type { IAttribute } from 'types/iattribute'
 import { useMediaQuery } from 'utils'
-import image from '../media/images/mern.png'
+import image from '../media/images/rssreader.png'
 import gituhubimgae from '../media/images/github-mark.png'
 
 export default function RssFeedReader(): ReactElement {
@@ -118,8 +118,7 @@ export default function RssFeedReader(): ReactElement {
                         <h4 className='font-bold text-xl'>2. Network Security:</h4>
                         <p className='text-xl'>To enhance security and prevent the network from being directly accessible from the internet, I incorporated Nginx as a proxy server. Nginx acts as an intermediary, forwarding user requests to retrieve data, thereby adding an additional layer of security.</p>
                         <p className='text-xl'>Additionally, client requests are made over HTTPS. By having Nginx handle the HTTPS connections and forward requests to the internal services over localhost, I avoid the need for SSL certificates for the app components within the internal network. This approach saves me from the hassle of periodic certificate renewal and reduces the costs associated with maintaining SSL certificates for internal services.</p>
-                        <h3 className="font-bold" >Infrastructure Diagram</h3>
-                        <ImagePane imagePath={image} imageTitle='mern' />
+                        <ImagePane imagePath={image} imageTitle='rssreader' />
                         <a className='text-base outer' href='https://github.com/pocketgroovy/RssFeed' target="_blank" rel="noreferrer" > <img className='h-5 w-5' src={gituhubimgae} alt='Code in github' />  Check Code in Github (Feed Retrieval)</a>
                         <a className='text-base outer' href='https://github.com/pocketgroovy/RssClient' target="_blank" rel="noreferrer" > <img className='h-5 w-5' src={gituhubimgae} alt='Code in github' />  Check Code in Github (User Interface)</a>
                         <p> Please feel free to contat me!</p>
