@@ -35,7 +35,7 @@ export default function Header(): ReactElement {
                 <div className='text-center col-span-3'>
                     <p className='font-comfortaa tracking-widest text-white text-5xl'> welcome!! </p>
                     <h1 className='m-3 py-6 font-pacifico text-6xl bg-clip-text text-transparent bg-gradient-to-l from-green-300 to-red-100  drop-shadow'>I am Yoshi Miyamoto </h1>
-                    <p className='font-comfortaa bg-lime-300  p-px  from-gray-100 to-transparent md:text-4xl'>Application Developer / Backend / Infra Engineer</p>
+                    <p className='font-comfortaa bg-lime-300 text-black md:text-4xl'>Application Developer / Backend / Infra Engineer</p>
                 </div>
                 <ModalButton><ToolListMainPage /></ModalButton>
                 <AttributionTag attribute={freepikBamboo} />

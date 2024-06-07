@@ -73,7 +73,6 @@ export default function ContactForm(): ReactElement {
 				},
 				body: JSON.stringify(details),
 			});
-			setStatus('Submit');
 			let responseResult = await response.json();
 
 			if (responseResult.status === 'success') {
@@ -84,8 +83,9 @@ export default function ContactForm(): ReactElement {
 			}
 		} catch (error) {
 			console.error(error);
-			setStatus('Submit');
 			setResult('Sorry! We are experiencing some issues with submitting message.');
+		} finally{
+			setStatus('Submit');
 		}
 	};
 	return (
@@ -152,7 +152,7 @@ export default function ContactForm(): ReactElement {
 							type="submit">
 							{status}
 						</button>
-						<h3>{result}</h3>
+						<h3 className='text-black'>{result}</h3>
 					</div>
 				</label>
 			</form>
