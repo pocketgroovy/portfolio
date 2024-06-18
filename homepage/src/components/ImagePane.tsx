@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { useMediaQuery } from "utils";
+import { useMediaQuery } from "../utils";
 import { IImage } from "types/Iimage";
 
 const DESKTOP_IMAGE_WIDTH_PERCENTAGE = 0.4
