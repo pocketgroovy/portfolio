@@ -4,12 +4,9 @@ import fs from 'fs';
 import https from 'https';
 import 'dotenv/config.js';
 import logger from "./dblogger.js";
-import cors from "cors";
-
 
 const DB_PORT = process.env.DB_PORT || 3660;
 const db = express();
-db.use(cors())
 db.use(express.json());
 db.use("/pgprojects", crud);
 
