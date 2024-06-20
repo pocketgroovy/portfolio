@@ -45,13 +45,12 @@ export default function Project({ project, index }: ProjProp): ReactElement {
 	}
 
 	// handle differently for local images and online images
-    if(project.image.url !== '' && project.image.author.name !== 'Yoshi Miyamoto'){
-       var defaultImage = `${project.image.url}&w=${imageWidth * window.devicePixelRatio
-		}&h=${imageHeight * window.devicePixelRatio}`}
-	if(project.image.author.name == 'Yoshi Miyamoto'){
+	var defaultImage = `${project.image.url}&w=${imageWidth * window.devicePixelRatio
+		}&h=${imageHeight * window.devicePixelRatio}`
+	if (project.image.author.name == 'Yoshi Miyamoto') {
 		defaultImage = "images/" + project.image.url
 	}
-	
+
 	return (
 		<div
 			className='cursor-pointer select-none overflow-hidden rounded-lg shadow-lg focus:border-gray-300 focus:outline-none focus:ring focus:ring-gray-500 focus:ring-opacity-50 dark:shadow-2xl'
