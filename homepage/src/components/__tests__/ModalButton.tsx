@@ -9,7 +9,7 @@ describe('<ModalButton />', () => {
         const button = screen.getByAltText('info button').closest('button');
         expect(button).toBeInTheDocument();
     });
-
+    
     it('opens the modal when button is clicked', () => {
         render(<ModalButton><ToolListMainPage /></ModalButton>);
         const button = screen.getByAltText('info button').closest('button');
@@ -19,19 +19,35 @@ describe('<ModalButton />', () => {
         fireEvent.click(button!); // Non-null assertion
 
         // Check if modal content is visible
-        const modalContent = screen.getByText('Main Tools Used To Make This Website');
-        expect(modalContent).toBeInTheDocument();
+        const modalContent = screen.getByTestId('modal-display');
+        expect(modalContent).toHaveClass('modal display-block');
     });
 
     it('closes the modal when button is clicked again', () => {
         render(<ModalButton><ToolListMainPage /></ModalButton>);
         // Check if modal content is visible
-        const modalContent = screen.getByText('Main Tools Used To Make This Website');
-        // Simulate button click to close modal
-        const closeButton = screen.getByText('Close').closest('button');
-        fireEvent.click(closeButton!); // Non-null assertion
+        // Simulate button click to open modal
+        const button = screen.getByAltText('info button').closest('button');
+        expect(button).not.toBeNull(); // Ensure button is found
+        fireEvent.click(button!); // Non-null assertion
+
+        // Check if modal content is visible
+        const modalContent = screen.getByTestId('modal-display');
+        expect(modalContent).toHaveClass('modal display-block');
+
+        // close the modal
+        fireEvent.click(button!); // Non-null assertion
 
         // Check if modal content is not visible
-        expect(modalContent).not.toBeVisible();
+        expect(modalContent).toHaveClass('display-none');
+    });
+
+    it('contains tool list', () => {
+        render(<ModalButton><ToolListMainPage /></ModalButton>);
+
+        const toollist = screen.getByTestId('tool-list');
+
+        // Check if tool list  
+        expect(toollist).toBeInTheDocument();
     });
 });
