@@ -4,6 +4,8 @@ import server from 'mocks/server'
 import { DESKTOP_RESOLUTION_HEIGHT, DESKTOP_RESOLUTION_WIDTH } from 'testUtils'
 import 'whatwg-fetch'
 
+
+
 beforeAll(() => {
 	server.listen({ onUnhandledRequest: 'error' })
 

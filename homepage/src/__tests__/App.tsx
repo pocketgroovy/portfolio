@@ -1,6 +1,5 @@
 import { screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
-import App from 'App'
+import App from '../App'
 import renderWithProviders from 'testUtils'
 
 describe('<App />', () => {
@@ -8,11 +7,10 @@ describe('<App />', () => {
 		window.history.pushState({}, 'Home', '/')
 		renderWithProviders(<App />, false)
 
-		await expect(screen.findByText('Apple')).resolves.toBeInTheDocument()
-		await userEvent.click(screen.getByText('Apple'))
+		await expect(screen.findByText('About Me')).resolves.toBeInTheDocument()
+		await expect(screen.findByText('welcome!!')).resolves.toBeInTheDocument()
+		await expect(screen.findByText('I am Yoshi Miyamoto')).resolves.toBeInTheDocument()
+		await expect(screen.findByText('Application Developer / Backend / Infra Engineer')).resolves.toBeInTheDocument()
 
-		await expect(
-			screen.findByText('Vitamins per 100 g (3.5 oz)')
-		).resolves.toBeInTheDocument()
 	})
 })

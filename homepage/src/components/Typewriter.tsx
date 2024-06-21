@@ -5,5 +5,5 @@ import type { TypeProp } from 'types/ityping';
 
 export default function Typewriter({ typingText, typingSpeed, textStyle }:TypeProp): ReactElement {
     const displayText = useTypewriter(typingText, typingSpeed);
-    return (<p className={textStyle}>{displayText}</p>);
+    return (<p data-testid="typing" className={textStyle}>{displayText}</p>);
 }
