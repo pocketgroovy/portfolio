@@ -123,7 +123,6 @@ export default function MyPortfolio(): ReactElement {
                     <h3 className='font-bold' >Challenges in Development:</h3>
                     <p className='text-xl'>The email and database servers, hosted on a VPS, were assigned to subdomains. This setup helped me avoid issues related to CORS (Cross-Origin Resource Sharing) .</p>
                     <p className='text-xl'>However, HTTPS communication presented a bit of a challenge. Even though the servers share the same domain (pocketgroovy), separate SSL certificates are needed for each subdomain unless you use wildcard or multi-domain certificates. Fortunately, <a className='outer' href="https://support.hostinger.com/en/articles/6865487-how-to-install-ssl-on-vps-using-certbot?irclickid=VjuR2qx3axyKTrVX642%3AL3f5UkHXCO2hky0ZUM0&irgwc=1&PID=95368" target='_blank'> Hostinger provided comprehensive documentation.</a> While the SSL installation wasn't automatic for these subdomains, their guidance saved me a lot of time and money.</p>
-                    <h3 className="font-bold" >Infrastructure Diagram</h3>
                     <ImagePane imagePath={image} imageTitle='mern' />
                     <a className='text-base outer' href='https://github.com/pocketgroovy/portfolio' target="_blank" rel="noreferrer" > <img className='h-5 w-5' src={gituhubimgae} alt='Code in github' />  Check Code in Github</a>
                     <p> Please feel free to contat me!</p>
