@@ -4,11 +4,14 @@ import fs from 'fs';
 import https from 'https';
 import 'dotenv/config.js';
 import logger from "./dblogger.js";
+import cors from "cors";
 
 const DB_PORT = process.env.DB_PORT || 3660;
 const db = express();
 db.use(express.json());
+db.use(cors());  // to disable cors for local development
 db.use("/pgprojects", crud);
+
 
 db.use((req, res, next) => {
   // Log an info message for each incoming request
