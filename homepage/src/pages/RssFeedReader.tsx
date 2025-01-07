@@ -58,17 +58,17 @@ export default function RssFeedReader(): ReactElement {
     return (
             <div className='flex min-h-screen flex-col items-center sm:flex-row'>
                 <div className='relative'>
-                    <img
-                        width={imageWidth}
-                        height={imageHeight}
-                        style={{
-                            backgroundColor: project.image.color
-                        }}
-                        src={defaultImage}
-                        alt={project.title}
-                    />
-                    <AttributionTag attribute={photoAttributes} />
-
+                    <a className='text-blue-600' href='https://rssreader.subscriber.pocketgroovy.com' target="_blank">
+                        <img
+                            width={imageWidth}
+                            height={imageHeight}
+                            style={{
+                                backgroundColor: project.image.color
+                            }}
+                            src={defaultImage}
+                            alt={project.title}
+                        />
+                    </a>
                 </div>
                 <div className='font-raleway my-8 sm:my-0 sm:ml-16'>
                     <Link data-testid='BackLink' to='/' className='flex items-center'>
@@ -79,7 +79,7 @@ export default function RssFeedReader(): ReactElement {
                     <h1
                         className='mt-2 text-5xl font-bold sm:mt-8'
                     >
-                        {project.title} <i className="text-sm fa-solid fa-arrow-up-right-from-square"></i><a className='text-sm' href='https://rssreader.subscriber.pocketgroovy.com' target="_blank">Open the Project Page</a>
+                        <a className='text-blue-600' href='https://rssreader.subscriber.pocketgroovy.com' target="_blank">{project.title} <i className="text-sm fa-solid fa-arrow-up-right-from-square"></i></a><a className='text-sm' href='https://rssreader.subscriber.pocketgroovy.com' target="_blank">Open the Project Page</a>
                     </h1>
                     
                     <table className='mt-8 text-lg'>
@@ -121,7 +121,7 @@ export default function RssFeedReader(): ReactElement {
                         <ImagePane imagePath={image} imageTitle='rssreader' />
                         <a className='text-base outer' href='https://github.com/pocketgroovy/RssFeed' target="_blank" rel="noreferrer" > <img className='h-5 w-5' src={gituhubimgae} alt='Code in github' />  Check Code in Github (Feed Retrieval)</a>
                         <a className='text-base outer' href='https://github.com/pocketgroovy/RssClient' target="_blank" rel="noreferrer" > <img className='h-5 w-5' src={gituhubimgae} alt='Code in github' />  Check Code in Github (User Interface)</a>
-                        <p> Please feel free to contat me!</p>
+                        <p className='italic'> Please feel free to contat me!</p>
 
                         <Link className='font-bold' to='/contacts'>
                             <span className="flex"><i className="mr-2 fa-regular fa-message flex items-start" />CONTACTS</span>

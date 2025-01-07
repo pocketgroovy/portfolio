@@ -47,5 +47,5 @@ place and untar the dist.tar under public_html
 3. add the app image to public/images folder
 4. add the app data into DB *image author name has to be "Yoshi Miyamoto"
 
-### To disable cors
+### To disable cors for local usage
 uncommnent out `db.use(cors());`

@@ -58,17 +58,17 @@ export default function WordpressPaymentApp(): ReactElement {
     return (
             <div className='flex min-h-screen flex-col items-center sm:flex-row'>
                 <div className='relative'>
-                    <img
-                        width={imageWidth}
-                        height={imageHeight}
-                        style={{
-                            backgroundColor: project.image.color
-                        }}
-                        src={defaultImage}
-                        alt={project.title}
-                    />
-                    <AttributionTag attribute={photoAttributes} />
-
+                    <a href='https://pocketfuldreams.com' target="_blank">
+                        <img
+                            width={imageWidth}
+                            height={imageHeight}
+                            style={{
+                                backgroundColor: project.image.color
+                            }}
+                            src={defaultImage}
+                            alt={project.title}
+                        />
+                    </a>
                 </div>
                 <div className='font-raleway my-8 sm:my-0 sm:ml-16'>
                     <Link data-testid='BackLink' to='/' className='flex items-center'>
@@ -79,7 +79,7 @@ export default function WordpressPaymentApp(): ReactElement {
                     <h1
                         className='mt-2 text-5xl font-bold sm:mt-8'
                     >
-                        {project.title} <i className="text-sm fa-solid fa-arrow-up-right-from-square"></i><a className='text-sm' href='https://rssreader.subscriber.pocketgroovy.com' target="_blank">Open the Project Page</a>
+                        <a className="text-blue-600" href='https://pocketfuldreams.com' target="_blank">{project.title} <i className="text-sm fa-solid fa-arrow-up-right-from-square"></i></a><a className='text-sm' href='https://pocketfuldreams.com' target="_blank">Open the Project Page</a>
                     </h1>
                     
                     <table className='mt-8 text-lg'>
@@ -91,11 +91,11 @@ export default function WordpressPaymentApp(): ReactElement {
                         </thead>
                         <tbody >
                             <tr >
-                                <td className='border border-gray-300 px-8 py-2'>Feed Retrieval Server</td>
+                                <td className='border border-gray-300 px-8 py-2'>Web Host</td>
                                 <td className='border border-gray-300 px-8 py-2'>Hostinger VPS Ubuntu</td>
                             </tr>
                             <tr >
-                                <td className='border border-gray-300 px-8 py-2'>User Interface Server</td>
+                                <td className='border border-gray-300 px-8 py-2'>Wordpress Server</td>
                                 <td className='border border-gray-300 px-8 py-2'>Hostinger VPS Ubuntu</td>
                             </tr>
                             <tr >
@@ -110,18 +110,12 @@ export default function WordpressPaymentApp(): ReactElement {
 
                     <div className='ps-px pr-64  text-2xl tracking-wide space-y-3'>
                         <h3 className='font-bold' >Feature:</h3>
-                        <p className='text-xl'>One of the most notable aspects of developing my RSS reader app was utilizing containers for all components, including MySQL. This approach ensures that the project can run seamlessly across various environments and offers excellent scalability.</p>
+                        <p className='text-xl'>This WordPress application was developed from the ground up using the latest WordPress version with a MySQL database. Using WooCommerce, the website offers an online shopping experience. The WP Mail SMTP plugin enables visitors to use a contact page to communicate with the site owner.</p>
                         <h3 className='font-bold' >Challenges in Development:</h3>
-                        <h4 className='font-bold text-xl'>1. Docker's Unique Networking:</h4>
-                        <p className='text-xl'>I implemented three different Docker containers for this project: the RSS Retriever, the RSS Subscriber (user interface), and the MySQL database. If the database were running directly on the host server (i.e., not containerized), the app could communicate with the database locally using localhost, avoiding the need for internet-based interactions. However, with containerization, it's like having three separate servers. Without a domain name or at least an IP address, these containers can't communicate with each other.</p>
-                        <p className='text-xl'>I was reluctant to use IP addresses due to the lack of guarantee that they would remain consistent upon container reinitialization. Fixing the IP addresses would undermine the flexibility and mobility benefits of Docker. Fortunately, Docker allows containers to communicate using their names, provided they are within the same custom network. This way, as long as the intended containers are in the same network, I can simply use their names for interactions, including with the database.</p>
-                        <h4 className='font-bold text-xl'>2. Network Security:</h4>
-                        <p className='text-xl'>To enhance security and prevent the network from being directly accessible from the internet, I incorporated Nginx as a proxy server. Nginx acts as an intermediary, forwarding user requests to retrieve data, thereby adding an additional layer of security.</p>
-                        <p className='text-xl'>Additionally, client requests are made over HTTPS. By having Nginx handle the HTTPS connections and forward requests to the internal services over localhost, I avoid the need for SSL certificates for the app components within the internal network. This approach saves me from the hassle of periodic certificate renewal and reduces the costs associated with maintaining SSL certificates for internal services.</p>
-                        <ImagePane imagePath={image} imageTitle='rssreader' />
-                        <a className='text-base outer' href='https://github.com/pocketgroovy/RssFeed' target="_blank" rel="noreferrer" > <img className='h-5 w-5' src={gituhubimgae} alt='Code in github' />  Check Code in Github (Feed Retrieval)</a>
-                        <a className='text-base outer' href='https://github.com/pocketgroovy/RssClient' target="_blank" rel="noreferrer" > <img className='h-5 w-5' src={gituhubimgae} alt='Code in github' />  Check Code in Github (User Interface)</a>
-                        <p> Please feel free to contat me!</p>
+                        <p className='text-xl'>Development and deployment of the webapp were remarkably smooth thanks to the use of a popular Content Management System (CMS). </p>
+                        <p className='text-xl'>Compared to other development projects I've worked on, I encountered very few significant challenges.</p>
+                        <p className='text-xl'>The only minor obstacle I faced was a limitation on the size of images that could be uploaded. However, this was easily resolved by adjusting the PHP and Nginx configurations to allow for larger file sizes.</p>
+                        <p className='italic'> Please feel free to contat me!</p>
 
                         <Link className='font-bold' to='/contacts'>
                             <span className="flex"><i className="mr-2 fa-regular fa-message flex items-start" />CONTACTS</span>
