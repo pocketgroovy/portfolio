@@ -21,7 +21,7 @@ export default function Projects(): ReactElement {
 		<div>
 			<div className='py-5 botoom-0 h-full w-full bg-black bg-opacity-50'>
 
-				<p className='font-ubuntu text-4xl text-center text-slate-300'>my sample projects </p>
+				<p className='font-ubuntu text-4xl text-center text-slate-300'>my projects </p>
 
 				<video autoPlay loop muted id="bgVideo">
 					<source src={backgroundVideo} type='video/mp4' />

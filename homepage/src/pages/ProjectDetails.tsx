@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Route, Routes, useParams } from 'react-router-
 
 const componentMap: { [key: string]: React.LazyExoticComponent<React.ComponentType<any>> } = {
     MyPortfolio: lazy(() => import('./MyPortfolio')),
-    RssFeedReader: lazy(() => import('./RssFeedReader'))
+    RssFeedReader: lazy(() => import('./RssFeedReader')),
+    WordpressPaymentApp: lazy(() => import('./WordpressPaymentApp')),
+    AIBusinessAssessment: lazy(() => import('./AIBusinessAssessment'))
     // Add other components to the map
 };
 

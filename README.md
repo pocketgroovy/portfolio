@@ -16,3 +16,36 @@ For enhanced security, I utilized Nginx to reverse-proxy requests to the servers
 The email and database servers, hosted on a VPS, were assigned to subdomains. This setup helped me avoid issues related to CORS (Cross-Origin Resource Sharing) .
 
 However, HTTPS communication presented a bit of a challenge. Even though the servers share the same domain (pocketgroovy), separate SSL certificates are needed for each subdomain unless you use wildcard or multi-domain certificates. Fortunately, Hostinger provided comprehensive documentation. While the SSL installation wasn't automatic for these subdomains, their guidance saved me a lot of time and money.
+
+
+## Run Commands
+### Local 
+#### Servers
+`node dbserver.js`, `node server.js`
+#### DB
+`mongod --dbpath /usr/local/var/mongodb --logpath /usr/local/var/log/mongodb/mongo.log --fork`
+
+#### homepage
+`vite --open`
+
+### Production
+#### Servers
+`pm2 start dbserver.js`, `pm2 start server.js`
+
+#### DB
+`systemctl start mongod`
+
+#### homepage
+`vite build`
+`tar -cvf dist.tar dist/`
+place and untar the dist.tar under public_html
+
+## Development Notes
+### To add new app page
+1. create tsx file with a title of the app under homepage/src/pages
+2. add the component to the map as componentMap in the ProjectDetails.tsx under homepage/src/pages
+3. add the app image to public/images folder
+4. add the app data into DB *image author name has to be "Yoshi Miyamoto"
+
+### To disable cors for local usage
+uncommnent out `db.use(cors());`
