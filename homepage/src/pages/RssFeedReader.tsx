@@ -58,7 +58,7 @@ export default function RssFeedReader(): ReactElement {
     return (
             <div className='flex min-h-screen flex-col items-center sm:flex-row'>
                 <div className='relative'>
-                    <a className='text-blue-600' href='https://rssreader.subscriber.pocketgroovy.com' target="_blank">
+                    <a className='text-blue-600' href={project.image.author.url}  target="_blank">
                         <img
                             width={imageWidth}
                             height={imageHeight}
@@ -79,7 +79,7 @@ export default function RssFeedReader(): ReactElement {
                     <h1
                         className='mt-2 text-5xl font-bold sm:mt-8'
                     >
-                        <a className='text-blue-600' href='https://rssreader.subscriber.pocketgroovy.com' target="_blank">{project.title} <i className="text-sm fa-solid fa-arrow-up-right-from-square"></i></a><a className='text-sm' href='https://rssreader.subscriber.pocketgroovy.com' target="_blank">Open the Project Page</a>
+                        <a className='text-blue-600' href={project.image.author.url} target="_blank">{project.title} <i className="text-sm fa-solid fa-arrow-up-right-from-square"></i></a><a className='text-sm' href={project.image.author.url} target="_blank">Open the Project Page</a>
                     </h1>
                     
                     <table className='mt-8 text-lg'>
