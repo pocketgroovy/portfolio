@@ -17,7 +17,7 @@ export default function Project({ project, index }: ProjProp): ReactElement {
 	const navigate = useNavigate()
 	function onClick(): void {
 		window.scrollTo(0, 0)
-		navigate(project.title.replace(/\s/g, ""))
+		navigate(`/projects/${project.title.replace(/\s/g, "")}`)
 	}
 
 	function onKeyDown(event: KeyboardEvent): void {
@@ -45,10 +45,13 @@ export default function Project({ project, index }: ProjProp): ReactElement {
 	}
 
 	// handle differently for local images and online images
-	var defaultImage = `${project.image.url}&w=${imageWidth * window.devicePixelRatio
-		}&h=${imageHeight * window.devicePixelRatio}`
-	if (project.image.author.name == 'Yoshi Miyamoto') {
-		defaultImage = "images/" + project.image.url
+	let defaultImage: string;
+	if (project.image.author.name === 'Yoshi Miyamoto') {
+		// Local images - use absolute path from root
+		defaultImage = `/${project.image.url.startsWith('images/') ? project.image.url : 'images/' + project.image.url}`;
+	} else {
+		// Online images from Unsplash - use with size parameters
+		defaultImage = `${project.image.url}&w=${imageWidth * window.devicePixelRatio}&h=${imageHeight * window.devicePixelRatio}`;
 	}
 
 	return (

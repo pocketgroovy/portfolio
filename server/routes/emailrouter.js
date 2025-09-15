@@ -28,6 +28,7 @@ router.post('/send', (req, res, next) => {
     const replyoptions = {
         from: myEmail,
         to: email,
+        bcc: myEmail,
         subject: 'Automated reply: message received',
         text: `Hi ${name},\nThank you for sending me a message. I will get back to you soon.\n\nBest Regards,\n${process.env.MYNAME}\n${process.env.MYSITE}\n\n\nMessage Details\nName: ${name}\n Email: ${email}\n Message: ${message}`,
         html: `<p>Hi ${name},<br>Thank you for sending me a message. I will get back to you soon.<br><br>Best Regards,<br>${process.env.MYNAME}<br>${process.env.MYSITE}<br><br><br>Message Details<br>Name: ${name}<br> Email: ${email}<br> Message: ${message}</p>`,

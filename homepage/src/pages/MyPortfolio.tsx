@@ -53,7 +53,7 @@ export default function MyPortfolio(): ReactElement {
             ? window.innerHeight
             : window.innerHeight) * window.devicePixelRatio
 
-    var defaultImage = "images/" + project.image.url
+    var defaultImage = "/images/" + project.image.url
 
     return (
         <div className='font-raleway flex min-h-screen flex-col items-center sm:flex-row'>

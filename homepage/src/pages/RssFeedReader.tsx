@@ -53,7 +53,7 @@ export default function RssFeedReader(): ReactElement {
             ? window.innerHeight
             : window.innerHeight) * window.devicePixelRatio
 
-       var defaultImage = "images/" + project.image.url
+       var defaultImage = "/images/" + project.image.url
   
     return (
             <div className='flex min-h-screen flex-col items-center sm:flex-row'>
