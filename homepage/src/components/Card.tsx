@@ -16,7 +16,7 @@ export default function Card(): ReactElement  {
 							<span>info@pocketgroovy.com</span>
 						</li>
 						<p className="text-left">
-							or use the contact form below
+							{/* or use the contact form below */}
 						</p>
 					</ul>
 				</div>

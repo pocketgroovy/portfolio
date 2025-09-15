@@ -11,7 +11,7 @@ export default function Contacts(): ReactElement {
             <div className="max-w-6xl mx-auto px-4 py-8">
                 <div className="text-center mb-12">
                     <h1 className="text-5xl font-bold text-white mb-4">Get In Touch</h1>
-                    <p className="text-xl text-gray-400">Ready to start your project? Let's discuss your needs.</p>
+                    {/* <p className="text-xl text-gray-400">Ready to start your project? Let's discuss your needs.</p> */}
                 </div>
                 
                 <div className='m-3 gap-4 grid grid-cols-4 min-h-full'>
@@ -19,9 +19,9 @@ export default function Contacts(): ReactElement {
                     <div className='col-span-2'>
                         <Card />
                     </div>
-                    <div className='col-span-2'>
+                    {/* <div className='col-span-2'>
                         <ContactForm />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </LayoutWrapper>

@@ -11,7 +11,7 @@ export default function WhoAmI(): ReactElement {
         <div className='flex flex-col space-y-2 font-medium text-normal break-words tracking-wider'>
             <p className='text-lg text-font-ubuntu'>
                 I&apos;m Yoshi Miyamoto, also known as PocketGroovy, and I&apos;m delighted to connect with you!!</p>
-            <p>As a devoted father to my 8-year-old daughter and lucky husband,
+            <p>As a devoted father to my 9-year-old daughter and lucky husband,
                 I find immense joy in both my family life and my professional pursuits.
                 I&apos;ve been working in the vibrant tech scene of U.S.A and Japan(Yes! I love Animes and Games!!).</p>
             <p>With over a decade of experience in software engineering, I&apos;ve had the pleasure of contributing to a variety of exciting projects, ranging from mobile apps and games to e-commerce web applications.

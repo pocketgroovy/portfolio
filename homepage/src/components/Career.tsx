@@ -11,22 +11,19 @@ export default function Career(): ReactElement {
         <div className='list-task-style'>
             <h1 className="jobtitle">Rakuten | Infrastructure Engineer | Tokyo, Japan					              2021-2024</h1>
             <ul className="tasklist">
-                <li>Reduced Azure Kubernetes Service upgrade process time by 80% through documentation of past troubleshooting efforts and standardization of regression tests</li>
-                <li>Managed PCIDSS-compliant security infrastructure by conducting periodic checkups using penetration testing and external/internal auditing companies</li>
-                <li>Addressed or remediated 100% of the vulnerabilities identified during the auditing process</li>
-                <li>Blocked more than 98% of illegal access by implementing Web Application Firewall(WAF)</li>
-                <li>Achieved 99.999% stability by setting up CI/CD pipelines with Jenkins, ArgoCD, and Bitbucket</li>
-                <li>Reduced 98% of http 431 error by adjusting the server setup</li>
-                <li>Detected and found a cause of timeout errors by investigating SQL audit logs(xel)  </li>
+                <li>Cut AKS upgrade time by 80% by codifying regression tests and documenting past incidents, enabling safe blue-green cluster rollouts </li>
+                <li> Maintained PCI DSS–compliant infrastructure; partnered with internal/external auditors and remediated 100% of findings within SLA </li>
+                <li> Deployed WAF policies and rate limiting at the edge, blocking &gt;98% of malicious requests without impacting conversion </li>
+                <li> Reduced HTTP 431 errors by 98% by tuning ingress and server header limits (e.g., proxy-buffer-size),
+                    eliminating checkout failures</li>
+                <li> Improved platform availability to 99.99%+ quarterly by implementing GitOps with Argo CD, gated CI with Jenkins, and automated rollbacks</li>
             </ul>
             <h1 className="jobtitle">Rakuten | Software Engineer | Tokyo, Japan	 				               	   	       	        2017 - 2021</h1>
             <ul className="tasklist">
-                <li>Created a CLI app to reduce 95% of Application deploying processing time</li>
-                <li>Responsible for improving the Login process for more secure access to R pay web application handling session information with RESTful access and cookies.</li>
-                <li>@Rakuten pay architecture team,  building Java web online payment app which is earning a monthly revenue of  One billion yen and attracting 20000 hourly access users.</li>
-                <li>Upgrading Java 1.6 to 1.8 to support TLS1.2 for better security.</li>
-                <li>Refactoring Java web app based on struts to spring-boot including replacing struts tags with jstl, mavenize to save more than 70% of development cost and time and better security.</li>
-                <li>Setting up Jenkins with Docker containers environment to reduce development cost and time by 90%</li>
+                <li> Built CLI tools that reduced application deployment time by 95% (hours → minutes) </li>
+                <li>  Hardened Rakuten Pay login and session management (REST APIs, cookies), improving security posture and reducing authentification failures</li>
+                <li>  Migrated legacy Struts app to Spring Boot; replaced Struts tags with JSTL and migrated builds to Maven,cutting development effort by &gt;70% and enabling TLS 1.2</li>
+                <li>  Containerized CI with Jenkins and Docker, reducing build times and developer setup by ~90%</li>
             </ul>
             <h1 className="jobtitle">Voltage Entertainment Inc. | Software Engineer | San Francisco, CA	2014 - 2017</h1>
             <ul className="tasklist">
@@ -37,7 +34,7 @@ export default function Career(): ReactElement {
             </ul>
             <h1 className="jobtitle">MashOn Inc. | Software Engineer | Los Angeles, CA	  2013</h1>
             <ul className="tasklist">
-                <li>Analyzed Java, Spring and JavaScript codebase to test and resolve server-side module errors in displaying item names and images of customers purchases.</li>
+                <li>Debugged Java/Spring/JavaScript modules to resolve server-side defects affecting item names and images in customer purchases.</li>
             </ul>
         </div>
     </div>)

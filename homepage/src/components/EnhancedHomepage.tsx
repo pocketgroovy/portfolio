@@ -2,68 +2,73 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import type { ReactElement } from 'react';
 
+// Icon component type definition
+interface IconProps {
+  className?: string;
+}
+
 // Icon components using SVG
-const ChevronRight = () => (
-  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+const ChevronRight = ({ className = "w-5 h-5" }: IconProps) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
   </svg>
 );
 
-const Code = ({ className }: { className?: string }) => (
+const Code = ({ className = "w-8 h-8" }: IconProps) => (
   <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
   </svg>
 );
 
-const Server = ({ className }: { className?: string }) => (
+const Server = ({ className = "w-8 h-8" }: IconProps) => (
   <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
   </svg>
 );
 
-const Globe = ({ className }: { className?: string }) => (
+const Globe = ({ className = "w-8 h-8" }: IconProps) => (
   <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m-9 9a9 9 0 019-9" />
   </svg>
 );
 
-const Zap = ({ className }: { className?: string }) => (
+const Zap = ({ className = "w-6 h-6" }: IconProps) => (
   <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
   </svg>
 );
 
-const Users = ({ className }: { className?: string }) => (
+const Users = ({ className = "w-6 h-6" }: IconProps) => (
   <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a4 4 0 11-8 0 4 4 0 018 0z" />
   </svg>
 );
 
-const CheckCircle = ({ className }: { className?: string }) => (
+const CheckCircle = ({ className = "w-4 h-4 text-emerald-400 mr-2 flex-shrink-0" }: IconProps) => (
   <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
   </svg>
 );
 
-const ArrowRight = ({ className }: { className?: string }) => (
+const ArrowRight = ({ className = "w-5 h-5" }: IconProps) => (
   <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
   </svg>
 );
 
-const Mail = ({ className }: { className?: string }) => (
+const Mail = ({ className = "w-5 h-5" }: IconProps) => (
   <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
   </svg>
 );
 
-const MessageCircle = ({ className }: { className?: string }) => (
+const MessageCircle = ({ className = "w-5 h-5 mr-2" }: IconProps) => (
   <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
   </svg>
 );
 
-const Star = ({ className }: { className?: string }) => (
+const Star = ({ className = "w-5 h-5 text-yellow-400 fill-current" }: IconProps) => (
   <svg className={className} fill="currentColor" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
   </svg>
@@ -131,20 +136,26 @@ export default function EnhancedHomepage(): ReactElement {
 
   const testimonials = [
     {
-      text: "Reduced our deployment time by 80% and achieved incredible stability. Yoshi's expertise in infrastructure is unmatched.",
-      author: "Tech Lead, E-commerce Platform",
-      company: "Fortune 500 Company"
+      text: "Yoshi demonstrates strong analytical skills and a deep understanding of project goals. His ability to interpret requirements precisely makes him a valuable team member. I highly recommend him!",
+      author: "Tech Lead",
+      company: "IT Consulting & Services"
     },
     {
-      text: "The custom WordPress solution delivered exactly what we needed. Professional, efficient, and always available for support.",
-      author: "Marketing Director",
-      company: "Digital Agency"
+      text: "Yoshi did a great job and great communicator. If you want somebody who is very proactive , I defenitely recommend him.",
+      author: "CTO",
+      company: "Software engineering service"
     },
     {
-      text: "From concept to launch in just 6 weeks. The attention to detail and technical excellence exceeded our expectations.",
+      text: "Yoshi was quick, reliable, and easy to work with. He provided valuable advice and helped us achieve our goals. We look forward to collaborating with him in the future.",
       author: "Startup Founder",
-      company: "SaaS Platform"
+      company: "E-commerce company"
+    },
+    {
+      text: " Yoshi exhibits a great can-do attitude and does his best to find a solution to the project’s needs. He’s a hard worker that can be counted on to put a solid day’s work in. If he wasn’t sure, he made sure to ask the other engineers for the best approach. He’s easy to work with, dedicated, and has a great attitude. To put it simply, Yoshi is a team player and willing to play ball. In addition, once you get to know him, he’s a really funny guy!",
+      author: "Senior Producer",
+      company: "Mobile Gaming company"
     }
+    
   ];
 
   const techStack = [
@@ -161,7 +172,25 @@ export default function EnhancedHomepage(): ReactElement {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      {/* Hero Section */}
+            {/* Navigation Bar */}
+      <nav className="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-sm border-b border-white/10">
+        <div className="max-w-6xl mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
+            <Link to="/" className="text-2xl font-bold text-white">
+              PocketGroovy
+            </Link>
+            <div className="hidden md:flex space-x-8">
+              <Link to="/" className="text-gray-300 hover:text-cyan-400 transition-colors">Home</Link>
+              <Link to="/projects" className="text-gray-300 hover:text-cyan-400 transition-colors">Projects</Link>
+              <Link to="/experience" className="text-gray-300 hover:text-cyan-400 transition-colors">Experience</Link>
+              <Link to="/service" className="text-gray-300 hover:text-cyan-400 transition-colors">Services</Link>
+              <Link to="/aboutMe" className="text-gray-300 hover:text-cyan-400 transition-colors">About</Link>
+              <Link to="/contacts" className="text-gray-300 hover:text-cyan-400 transition-colors">Contact</Link>
+            </div>
+          </div>
+        </div>
+      </nav>
+      {/* Hero Section with Introduction */}
       <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
         <div className="absolute inset-0 opacity-10">
@@ -171,21 +200,38 @@ export default function EnhancedHomepage(): ReactElement {
         </div>
         
         <div className="relative z-10 text-center max-w-5xl mx-auto">
-          <div className="mb-8">
-            <div className="inline-flex items-center px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 text-sm font-medium mb-6">
-              <span className="w-2 h-2 bg-emerald-400 rounded-full mr-2 animate-pulse"></span>
-              Available for New Projects
+          {/* YOSHI MIYAMOTO INTRODUCTION CARD */}
+          <div className="mb-16">
+            <div className="inline-flex items-center px-10 py-8 bg-white/20 backdrop-blur-xl rounded-3xl text-white shadow-2xl transform hover:scale-105 transition-all duration-300">
+              <div className="w-24 h-24 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-500 rounded-full flex items-center justify-center mr-8 shadow-2xl">
+                <span className="text-3xl font-bold text-white">YM</span>
+              </div>
+              <div className="text-center">
+                <div className="text-7xl font-bold text-white mb-1 italic">Hi, I'm Yoshi Miyamoto</div>
+                <div className="text-xl text-cyan-200 font-semibold">Software Engineer • Infrastructure Architect</div>
+              </div>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              Turn Your Ideas Into
-              <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent"> Reality</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Full-stack developer & infrastructure engineer with 10+ years experience. 
-              I build scalable web applications and robust cloud solutions that grow with your business.
-            </p>
           </div>
+
+          {/* Available Badge */}
+          <div className="inline-flex items-center px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 text-sm font-medium mb-8">
+            <span className="w-2 h-2 bg-emerald-400 rounded-full mr-2 animate-pulse"></span>
+            Available for New Projects
+          </div>
+
+          {/* Main Headline */}
+          <h1 className="text-3xl md:text-7xl font-bold text-white mb-6 leading-tight">
+            Turn Your Ideas Into
+            <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent"> Reality</span>
+          </h1>
+
+          {/* Description */}
+          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
+            Full-stack developer & infrastructure engineer with 10+ years experience. 
+            I build scalable web applications and robust cloud solutions that grow with your business.
+          </p>
           
+          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Link to="/contacts" className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 flex items-center">
               Start Your Project
@@ -216,24 +262,6 @@ export default function EnhancedHomepage(): ReactElement {
         </div>
       </section>
 
-      {/* Navigation Bar */}
-      <nav className="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-sm border-b border-white/10">
-        <div className="max-w-6xl mx-auto px-4 py-4">
-          <div className="flex justify-between items-center">
-            <Link to="/" className="text-2xl font-bold text-white">
-              PocketGroovy
-            </Link>
-            <div className="hidden md:flex space-x-8">
-              <Link to="/" className="text-gray-300 hover:text-cyan-400 transition-colors">Home</Link>
-              <Link to="/projects" className="text-gray-300 hover:text-cyan-400 transition-colors">Projects</Link>
-              <Link to="/experience" className="text-gray-300 hover:text-cyan-400 transition-colors">Experience</Link>
-              <Link to="/service" className="text-gray-300 hover:text-cyan-400 transition-colors">Services</Link>
-              <Link to="/aboutMe" className="text-gray-300 hover:text-cyan-400 transition-colors">About</Link>
-              <Link to="/contacts" className="text-gray-300 hover:text-cyan-400 transition-colors">Contact</Link>
-            </div>
-          </div>
-        </div>
-      </nav>
 
       {/* Services Section */}
       <section id="services" data-animate className={`py-20 px-4 transition-all duration-1000 ${isVisible.services ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>

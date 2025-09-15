@@ -71,7 +71,7 @@ export default function RssFeedReader(): ReactElement {
                     </a>
                 </div>
                 <div className='font-raleway my-8 sm:my-0 sm:ml-16'>
-                    <Link data-testid='BackLink' to='/' className='flex items-center'>
+                    <Link data-testid='BackLink' to='/projects' className='flex items-center'>
                         <img src='/icons/arrow-left.svg' alt='' className='h-5 w-5' />
                         <span className='ml-4 text-xl'>Back</span>
                     </Link>
